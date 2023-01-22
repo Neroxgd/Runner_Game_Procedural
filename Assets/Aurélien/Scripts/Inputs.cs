@@ -12,15 +12,14 @@ public class Inputs : MonoBehaviour
     public void MoveLeft(InputAction.CallbackContext context) { if (context.started) _playerController.Move(false); }
     public void MoveRight(InputAction.CallbackContext context) { if (context.started) _playerController.Move(true); }
 
-
     // 0 = up
-    // 1 = left
-    // 2 = right
+    // 1 = right
+    // -1 = left
     public void ChangeGravityUp(InputAction.CallbackContext context) { if (context.started) _playerController.ChangeGravity(0); }
 
-    public void ChangeGravityLeft(InputAction.CallbackContext context) { if (context.started) _playerController.ChangeGravity(1); }
+    public void ChangeGravityLeft(InputAction.CallbackContext context) { if (context.started) _playerController.ChangeGravity(-1); }
 
-    public void ChangeGravityRight(InputAction.CallbackContext context) { if (context.started) _playerController.ChangeGravity(2); }
+    public void ChangeGravityRight(InputAction.CallbackContext context) { if (context.started) _playerController.ChangeGravity(1); }
 
     void Update()
     {
