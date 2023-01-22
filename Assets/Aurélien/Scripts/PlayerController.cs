@@ -49,7 +49,7 @@ public class PlayerController : MonoBehaviour
         Debug.DrawRay(transform.position, -transform.up * 0.55f, Color.green);
         if (Physics.Raycast(ray, 0.55f))
         {
-            gravity = 0;
+            gravity = 1;
             print("sol");
         }
     }
