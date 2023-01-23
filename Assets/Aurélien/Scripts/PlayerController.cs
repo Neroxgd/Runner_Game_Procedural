@@ -16,7 +16,7 @@ public class PlayerController : MonoBehaviour
 
     public void Move(bool direction)
     {
-        if (IsOnGround)
+        if (IsOnGround && !isOnRotate /*&& DOTween.IsTweening(rbPlayer)*/)
         {
             if (direction)
                 rbPlayer.DOMove(ClampPosPlayer(transform.right * 1), speedMove);
