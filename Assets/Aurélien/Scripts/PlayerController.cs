@@ -81,13 +81,16 @@ public class PlayerController : MonoBehaviour
         Ray ray = new Ray(transform.position, -transform.up);
         gravity += Powergravity * Time.fixedDeltaTime;
         rbPlayer.velocity += -transform.up * gravity * Time.fixedDeltaTime;
+        RaycastHit hit;
 
-        Debug.DrawRay(transform.position, -transform.up * 0.55f, Color.green);
-        if (Physics.Raycast(ray, 0.55f))
+        Debug.DrawRay(transform.position, -transform.up * 0.5f, Color.green);
+        if (Physics.Raycast(ray, out hit, 0.55f))
         {
             IsOnGround = true;
             gravity = 1;
-            //print("sol");
+            rbPlayer.velocity = Vector3.zero;
+            if (!DOTween.IsTweening(rbPlayer))
+                transform.position = hit.point + transform.up / 2;
         }
         else
             IsOnGround = false;

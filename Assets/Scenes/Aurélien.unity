@@ -153,7 +153,7 @@ Transform:
   m_Children:
   - {fileID: 990536326}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &311632727 stripped
 Transform:
@@ -334,7 +334,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 765843978}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 2.5, z: -21.21}
+  m_LocalPosition: {x: 0, y: 2.5, z: -15.82}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -491,7 +491,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!114 &1821216248
 MonoBehaviour:
@@ -618,7 +618,7 @@ PrefabInstance:
     - target: {fileID: 3749413768447557781, guid: 4bdff07aaa66fdb4c8efc8b6d82f9212,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3749413768447557781, guid: 4bdff07aaa66fdb4c8efc8b6d82f9212,
         type: 3}
@@ -675,6 +675,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: // -- Useful Position -- //
       objectReference: {fileID: 0}
+    - target: {fileID: 3749413769040473778, guid: 4bdff07aaa66fdb4c8efc8b6d82f9212,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 27
+      objectReference: {fileID: 0}
+    - target: {fileID: 3749413769601734777, guid: 4bdff07aaa66fdb4c8efc8b6d82f9212,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -49.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4bdff07aaa66fdb4c8efc8b6d82f9212, type: 3}
 --- !u!1001 &5427058752440639148
@@ -689,6 +699,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: gameManager
       objectReference: {fileID: 0}
+    - target: {fileID: 5427058751294815936, guid: 66a1ff40640272a4587e9208c33bbc0f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5427058751294815937, guid: 66a1ff40640272a4587e9208c33bbc0f,
         type: 3}
       propertyPath: end
@@ -699,10 +714,55 @@ PrefabInstance:
       propertyPath: spawn
       value: 
       objectReference: {fileID: 781602127}
+    - target: {fileID: 5427058751294815937, guid: 66a1ff40640272a4587e9208c33bbc0f,
+        type: 3}
+      propertyPath: TimeBetweenSpawn
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5427058751294815937, guid: 66a1ff40640272a4587e9208c33bbc0f,
+        type: 3}
+      propertyPath: TimeOfTheObstacleSequence
+      value: 8.48
+      objectReference: {fileID: 0}
+    - target: {fileID: 5427058751294815937, guid: 66a1ff40640272a4587e9208c33bbc0f,
+        type: 3}
+      propertyPath: PrefabsObstacle.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5427058751294815937, guid: 66a1ff40640272a4587e9208c33bbc0f,
+        type: 3}
+      propertyPath: PrefabsObstacle.Array.data[0]
+      value: 
+      objectReference: {fileID: 4751279107462558201, guid: 592243dc39357d14aadb55503cb887d4,
+        type: 3}
+    - target: {fileID: 5427058751294815937, guid: 66a1ff40640272a4587e9208c33bbc0f,
+        type: 3}
+      propertyPath: PrefabsObstacle.Array.data[1]
+      value: 
+      objectReference: {fileID: 4751279107462558201, guid: 55cc38d325970f848997544da4ff12b9,
+        type: 3}
+    - target: {fileID: 5427058751294815937, guid: 66a1ff40640272a4587e9208c33bbc0f,
+        type: 3}
+      propertyPath: PrefabsObstacle.Array.data[3]
+      value: 
+      objectReference: {fileID: 4751279107462558201, guid: b1b999fa82f3bd24490d808dfb8e958c,
+        type: 3}
+    - target: {fileID: 5427058751294815937, guid: 66a1ff40640272a4587e9208c33bbc0f,
+        type: 3}
+      propertyPath: PrefabsObstacle.Array.data[4]
+      value: 
+      objectReference: {fileID: 4751279107462558201, guid: 55cc38d325970f848997544da4ff12b9,
+        type: 3}
+    - target: {fileID: 5427058751294815937, guid: 66a1ff40640272a4587e9208c33bbc0f,
+        type: 3}
+      propertyPath: PrefabsObstacle.Array.data[5]
+      value: 
+      objectReference: {fileID: 4751279107462558201, guid: 592243dc39357d14aadb55503cb887d4,
+        type: 3}
     - target: {fileID: 5427058751294815938, guid: 66a1ff40640272a4587e9208c33bbc0f,
         type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5427058751294815938, guid: 66a1ff40640272a4587e9208c33bbc0f,
         type: 3}
@@ -763,6 +823,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7212504640912952547, guid: ec6eae5cab2c49744aace746512848a1,
+        type: 3}
+      propertyPath: m_IsKinematic
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7212504640912952547, guid: ec6eae5cab2c49744aace746512848a1,
+        type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7212504640912952548, guid: ec6eae5cab2c49744aace746512848a1,
         type: 3}
       propertyPath: cam
@@ -773,6 +843,11 @@ PrefabInstance:
       propertyPath: maxUpYPos
       value: 
       objectReference: {fileID: 729133747}
+    - target: {fileID: 7212504640912952548, guid: ec6eae5cab2c49744aace746512848a1,
+        type: 3}
+      propertyPath: speedMove
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 7212504640912952548, guid: ec6eae5cab2c49744aace746512848a1,
         type: 3}
       propertyPath: maxDownYPos
@@ -796,7 +871,7 @@ PrefabInstance:
     - target: {fileID: 7212504640912952549, guid: ec6eae5cab2c49744aace746512848a1,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.5
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 7212504640912952549, guid: ec6eae5cab2c49744aace746512848a1,
         type: 3}
