@@ -15,6 +15,6 @@ public class InteractionWall
     void CheckRayCastWall()
     {
         RaycastHit hit;
-        if (Physics.Raycast())
+        //if (Physics.Raycast())
     }
 }
