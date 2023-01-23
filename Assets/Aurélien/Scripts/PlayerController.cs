@@ -50,7 +50,7 @@ public class PlayerController : MonoBehaviour
         if (Physics.Raycast(ray, 0.55f))
         {
             gravity = 1;
-            print("sol");
+            //print("sol");
         }
     }
 }
