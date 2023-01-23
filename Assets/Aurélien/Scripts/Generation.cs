@@ -20,6 +20,7 @@ public class Generation : MonoBehaviour
     {
         yield return new WaitForSeconds(TimeBetweenSpawn);
         GameObject currentobstacle = Instantiate(PrefabsObstacle[Random.Range(0, PrefabsObstacle.Length)], spawn.position, Quaternion.identity);
+        ApplyCollider(currentobstacle);
         Sequence sequenceObstacle = DOTween.Sequence();
         sequenceObstacle.Append(currentobstacle.transform.DOMove(end.position, TimeOfTheObstacleSequence, false).SetEase(Ease.InSine));
         sequenceObstacle.InsertCallback(TimeOfTheObstacleSequence * 0.5f, () => DestroyObstacles(currentobstacle));
@@ -30,5 +31,13 @@ public class Generation : MonoBehaviour
     {
         for (int i = 0; i < currentobject.transform.childCount; i++)
             currentobject.transform.GetChild(i).DOScale(Vector3.zero, TimeOfTheObstacleSequence * 0.5f).SetEase(Ease.InBack).OnComplete(() => Destroy(currentobject));
+    }
+
+    void ApplyCollider(GameObject _GameObject)
+    {
+        for (int i=0 ; i< _GameObject.transform.childCount ; i++)
+        {
+            _GameObject.transform.GetChild(i).GetComponent<BoxCollider>().isTrigger = true;
+        }
     }
 }

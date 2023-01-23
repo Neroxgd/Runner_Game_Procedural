@@ -73,7 +73,7 @@ public class PlayerController : MonoBehaviour
         {
             IsOnGround = true;
             gravity = 1;
-            print("sol");
+            //print("sol");
         }
         else
             IsOnGround = false;
