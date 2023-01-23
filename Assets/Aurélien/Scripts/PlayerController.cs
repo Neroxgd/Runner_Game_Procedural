@@ -76,12 +76,7 @@ public class PlayerController : MonoBehaviour
             gravity = 1;
             rbPlayer.velocity = Vector3.zero;
             if (!DOTween.IsTweening(rbPlayer))
-            {
                 transform.position = hit.point + transform.up / 2;
-            }
-                
-            //print("sol");
-            print("aaa");
         }
         else
             IsOnGround = false;
