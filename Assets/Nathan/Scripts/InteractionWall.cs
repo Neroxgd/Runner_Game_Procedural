@@ -3,18 +3,24 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
+[System.Serializable]
 public class InteractionWall
 {
-    float distance;
+    [SerializeField] float distance;
+    [SerializeField] LayerMask _mask;
 
-    void Update()
-    {
-        
-    }
-
-    void CheckRayCastWall()
+    public void CheckRayCastWall(Vector3 positionValue)
     {
         RaycastHit hit;
-        //if (Physics.Raycast())
+
+        if (Physics.Raycast(positionValue,Vector3.forward , out hit , distance , _mask))
+        {
+            Debug.Log("Ta bouffé le mur");
+        }
+    }
+
+    public void setDistance(float value)
+    {
+        distance = value;
     }
 }

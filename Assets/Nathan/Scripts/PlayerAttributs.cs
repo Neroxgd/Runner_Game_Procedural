@@ -2,28 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable]
 public class PlayerAttributs
 {
-    int hp;
-    float speed;
+    [SerializeField] int hp;
+    [SerializeField] float speed;
 
-    void Start()
-    {
-        setHP(3);
-        setSpeed(0.5f);
-        
-    }
-    void Update()
-    {
-        Debug.Log(hp);
-    }
-
-    void setHP(int value)
+    public void setHP(int value)
     {
         hp = value;
     }
 
-    void setSpeed(float value)
+    public void setSpeed(float value)
     {
         speed = value;
     }

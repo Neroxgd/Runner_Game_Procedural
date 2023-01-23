@@ -6,7 +6,8 @@ using System;
 
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField] private float speedMove = 0.5f, speedRotate = 0.5f;
+    [SerializeField] PlayerAttributs _PlayerAttributs = new PlayerAttributs();
+    [SerializeField] InteractionWall _InteractionWall = new InteractionWall();
     [SerializeField] private Rigidbody rbPlayer;
     [SerializeField] private Transform maxLeftXPos, maxRightXPos, maxUpYPos, maxDownYPos;
     [SerializeField] private float Powergravity = 9.81f;
@@ -20,9 +21,9 @@ public class PlayerController : MonoBehaviour
         if (IsOnGround && !isOnRotate && !DOTween.IsTweening(rbPlayer))
         {
             if (direction)
-                rbPlayer.DOMove(ClampPosPlayer(transform.right), speedMove);
+                rbPlayer.DOMove(ClampPosPlayer(transform.right), _PlayerAttributs.getSpeed());
             else
-                rbPlayer.DOMove(ClampPosPlayer(-transform.right), speedMove);
+                rbPlayer.DOMove(ClampPosPlayer(-transform.right), _PlayerAttributs.getSpeed());
         }
     }
 
@@ -40,19 +41,19 @@ public class PlayerController : MonoBehaviour
             StartCoroutine(IsOnRotate());
             if (directionGravity == 0)
             {
-                transform.DOLocalRotate(new Vector3(0, 0, -180), speedRotate, RotateMode.LocalAxisAdd);
-                cam.transform.DOLocalRotate(new Vector3(0, 0, -180), speedRotate, RotateMode.LocalAxisAdd);
+                transform.DOLocalRotate(new Vector3(0, 0, -180), _PlayerAttributs.getSpeed(), RotateMode.LocalAxisAdd);
+                cam.transform.DOLocalRotate(new Vector3(0, 0, -180), _PlayerAttributs.getSpeed(), RotateMode.LocalAxisAdd);
             }
 
             else if (directionGravity == -1)
             {
-                transform.DOLocalRotate(new Vector3(0, 0, -90), speedRotate, RotateMode.LocalAxisAdd);
-                cam.transform.DOLocalRotate(new Vector3(0, 0, -90), speedRotate, RotateMode.LocalAxisAdd);
+                transform.DOLocalRotate(new Vector3(0, 0, -90), _PlayerAttributs.getSpeed(), RotateMode.LocalAxisAdd);
+                cam.transform.DOLocalRotate(new Vector3(0, 0, -90), _PlayerAttributs.getSpeed(), RotateMode.LocalAxisAdd);
             }
             else if (directionGravity == 1)
             {
-                transform.DOLocalRotate(new Vector3(0, 0, 90), speedRotate, RotateMode.LocalAxisAdd);
-                cam.transform.DOLocalRotate(new Vector3(0, 0, 90), speedRotate, RotateMode.LocalAxisAdd);
+                transform.DOLocalRotate(new Vector3(0, 0, 90), _PlayerAttributs.getSpeed(), RotateMode.LocalAxisAdd);
+                cam.transform.DOLocalRotate(new Vector3(0, 0, 90), _PlayerAttributs.getSpeed(), RotateMode.LocalAxisAdd);
             }
         }
 
@@ -61,6 +62,18 @@ public class PlayerController : MonoBehaviour
     void FixedUpdate()
     {
         Gravity();
+    }
+
+    void Update()
+    {
+        _InteractionWall.CheckRayCastWall(transform.position);
+    }
+
+    void Start()
+    {
+        _PlayerAttributs.setHP(3);
+        _PlayerAttributs.setSpeed(0.5f);
+        _InteractionWall.setDistance(0.3f);
     }
 
     private void Gravity()
@@ -84,7 +97,7 @@ public class PlayerController : MonoBehaviour
     {
         isOnRotate = true;
         rbPlayer.constraints = RigidbodyConstraints.FreezePosition;
-        yield return new WaitForSeconds(speedRotate);
+        yield return new WaitForSeconds(_PlayerAttributs.getSpeed());
         rbPlayer.constraints = RigidbodyConstraints.FreezePositionZ | RigidbodyConstraints.FreezeRotation;
         isOnRotate = false;
     }
