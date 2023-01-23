@@ -16,12 +16,12 @@ public class PlayerController : MonoBehaviour
 
     public void Move(bool direction)
     {
-        if (IsOnGround && !isOnRotate /*&& DOTween.IsTweening(rbPlayer)*/)
+        if (IsOnGround && !isOnRotate && !DOTween.IsTweening(rbPlayer))
         {
             if (direction)
-                rbPlayer.DOMove(ClampPosPlayer(transform.right * 1), speedMove);
+                rbPlayer.DOMove(ClampPosPlayer(transform.right), speedMove);
             else
-                rbPlayer.DOMove(ClampPosPlayer(-transform.right * 1), speedMove);
+                rbPlayer.DOMove(ClampPosPlayer(-transform.right), speedMove);
         }
     }
 
