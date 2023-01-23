@@ -3,16 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-public class InteractionWall : MonoBehaviour
+public class InteractionWall
 {
-    public static event Action takingWall;
+    float distance;
 
-    void OnTriggerEnter(Collider coll)
+    void Update()
     {
-        if (coll.CompareTag("Player"))
-        {
-            Debug.Log("Ta bouffé le mur");
-            takingWall.Invoke();
-        }
+        
+    }
+
+    void CheckRayCastWall()
+    {
+        RaycastHit hit;
+        //if (Physics.Raycast())
     }
 }
