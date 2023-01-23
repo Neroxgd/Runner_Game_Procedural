@@ -30,7 +30,7 @@ public class Generation : MonoBehaviour
     private void DestroyObstacles(GameObject currentobject)
     {
         for (int i = 0; i < currentobject.transform.childCount; i++)
-            currentobject.transform.GetChild(i).DOScale(Vector3.zero, TimeOfTheObstacleSequence * 0.5f).SetEase(Ease.InBack).OnComplete(() => Destroy(currentobject));
+            currentobject.transform.GetChild(i).DOScale(Vector3.zero, TimeOfTheObstacleSequence * 0.5f).SetEase(Ease.InCirc).OnComplete(() => Destroy(currentobject));
     }
 
     void ApplyCollider(GameObject _GameObject)
