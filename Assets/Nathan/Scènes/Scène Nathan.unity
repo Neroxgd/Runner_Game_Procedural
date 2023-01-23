@@ -139,7 +139,7 @@ GameObject:
   - component: {fileID: 33119737}
   - component: {fileID: 33119736}
   - component: {fileID: 33119735}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -179,6 +179,9 @@ MonoBehaviour:
     speed: 0
   _InteractionWall:
     distance: 0
+    _mask:
+      serializedVersion: 2
+      m_Bits: 8
   rbPlayer: {fileID: 33119735}
   maxLeftXPos: {fileID: 1984635697}
   maxRightXPos: {fileID: 802772366}
