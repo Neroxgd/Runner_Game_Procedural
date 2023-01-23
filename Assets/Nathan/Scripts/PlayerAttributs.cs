@@ -11,7 +11,6 @@ public class PlayerAttributs
     {
         setHP(3);
         setSpeed(0.5f);
-        InteractionWall.takingWall += LoseHP;
         
     }
     void Update()
