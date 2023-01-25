@@ -716,6 +716,11 @@ PrefabInstance:
       objectReference: {fileID: 781602127}
     - target: {fileID: 5427058751294815937, guid: 66a1ff40640272a4587e9208c33bbc0f,
         type: 3}
+      propertyPath: SpeedOfObstacle
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5427058751294815937, guid: 66a1ff40640272a4587e9208c33bbc0f,
+        type: 3}
       propertyPath: TimeBetweenSpawn
       value: 5
       objectReference: {fileID: 0}
@@ -727,7 +732,7 @@ PrefabInstance:
     - target: {fileID: 5427058751294815937, guid: 66a1ff40640272a4587e9208c33bbc0f,
         type: 3}
       propertyPath: PrefabsObstacle.Array.size
-      value: 2
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 5427058751294815937, guid: 66a1ff40640272a4587e9208c33bbc0f,
         type: 3}
@@ -739,25 +744,61 @@ PrefabInstance:
         type: 3}
       propertyPath: PrefabsObstacle.Array.data[1]
       value: 
-      objectReference: {fileID: 4751279107462558201, guid: 55cc38d325970f848997544da4ff12b9,
+      objectReference: {fileID: 2875769615897325887, guid: 2b8a6764980e82c4fb7bd35677f6ae18,
+        type: 3}
+    - target: {fileID: 5427058751294815937, guid: 66a1ff40640272a4587e9208c33bbc0f,
+        type: 3}
+      propertyPath: PrefabsObstacle.Array.data[2]
+      value: 
+      objectReference: {fileID: 2937216351258143793, guid: 894e8b35c241a124daaecac1dd807a11,
         type: 3}
     - target: {fileID: 5427058751294815937, guid: 66a1ff40640272a4587e9208c33bbc0f,
         type: 3}
       propertyPath: PrefabsObstacle.Array.data[3]
       value: 
-      objectReference: {fileID: 4751279107462558201, guid: b1b999fa82f3bd24490d808dfb8e958c,
+      objectReference: {fileID: 4751279107462558201, guid: 90609d23f0ed13c4299bac08e390ed21,
         type: 3}
     - target: {fileID: 5427058751294815937, guid: 66a1ff40640272a4587e9208c33bbc0f,
         type: 3}
       propertyPath: PrefabsObstacle.Array.data[4]
       value: 
-      objectReference: {fileID: 4751279107462558201, guid: 55cc38d325970f848997544da4ff12b9,
+      objectReference: {fileID: 4751279107462558201, guid: b1b999fa82f3bd24490d808dfb8e958c,
         type: 3}
     - target: {fileID: 5427058751294815937, guid: 66a1ff40640272a4587e9208c33bbc0f,
         type: 3}
       propertyPath: PrefabsObstacle.Array.data[5]
       value: 
-      objectReference: {fileID: 4751279107462558201, guid: 592243dc39357d14aadb55503cb887d4,
+      objectReference: {fileID: 4751279107462558201, guid: 55cc38d325970f848997544da4ff12b9,
+        type: 3}
+    - target: {fileID: 5427058751294815937, guid: 66a1ff40640272a4587e9208c33bbc0f,
+        type: 3}
+      propertyPath: PrefabsObstacle.Array.data[6]
+      value: 
+      objectReference: {fileID: 4751279107462558201, guid: 623db61137946b545b9edcdd2882bd41,
+        type: 3}
+    - target: {fileID: 5427058751294815937, guid: 66a1ff40640272a4587e9208c33bbc0f,
+        type: 3}
+      propertyPath: PrefabsObstacle.Array.data[7]
+      value: 
+      objectReference: {fileID: 4751279107462558201, guid: 799979522af715841b14a3e134c09100,
+        type: 3}
+    - target: {fileID: 5427058751294815937, guid: 66a1ff40640272a4587e9208c33bbc0f,
+        type: 3}
+      propertyPath: PrefabsObstacle.Array.data[8]
+      value: 
+      objectReference: {fileID: 4751279107462558201, guid: 2b8479a8668cffa44b8af29526683761,
+        type: 3}
+    - target: {fileID: 5427058751294815937, guid: 66a1ff40640272a4587e9208c33bbc0f,
+        type: 3}
+      propertyPath: PrefabsObstacle.Array.data[9]
+      value: 
+      objectReference: {fileID: 4751279107462558201, guid: 77a1c0fea77e5f9408e858edd1ab4524,
+        type: 3}
+    - target: {fileID: 5427058751294815937, guid: 66a1ff40640272a4587e9208c33bbc0f,
+        type: 3}
+      propertyPath: PrefabsObstacle.Array.data[10]
+      value: 
+      objectReference: {fileID: 4751279107462558201, guid: 7eebe8c1ee506b949ba8bf5c5aa03b48,
         type: 3}
     - target: {fileID: 5427058751294815938, guid: 66a1ff40640272a4587e9208c33bbc0f,
         type: 3}
@@ -858,6 +899,11 @@ PrefabInstance:
       propertyPath: maxLeftXPos
       value: 
       objectReference: {fileID: 1994772539}
+    - target: {fileID: 7212504640912952548, guid: ec6eae5cab2c49744aace746512848a1,
+        type: 3}
+      propertyPath: Powergravity
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 7212504640912952548, guid: ec6eae5cab2c49744aace746512848a1,
         type: 3}
       propertyPath: maxRightXPos
