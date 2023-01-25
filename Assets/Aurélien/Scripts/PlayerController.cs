@@ -80,7 +80,7 @@ public class PlayerController : MonoBehaviour
     {
         Ray ray = new Ray(transform.position, -transform.up);
         gravity += Powergravity * Time.fixedDeltaTime;
-        rbPlayer.velocity += -transform.up * gravity * Time.fixedDeltaTime;
+        rbPlayer.velocity += -transform.up * gravity;
         RaycastHit hit;
 
         Debug.DrawRay(transform.position, -transform.up * 0.5f, Color.green);
