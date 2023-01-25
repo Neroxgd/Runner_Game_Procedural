@@ -24,7 +24,9 @@ public class PlayerController : MonoBehaviour
                 rbPlayer.DOMove(ClampPosPlayer(transform.right), _PlayerAttributs.getSpeed());
             else
                 rbPlayer.DOMove(ClampPosPlayer(-transform.right), _PlayerAttributs.getSpeed());
+            print("ezzz");
         }
+        Debug.Log(IsOnGround + " " + isOnRotate + " " + DOTween.IsTweening(rbPlayer));
     }
 
     private Vector3 ClampPosPlayer(Vector3 dir)
@@ -75,7 +77,7 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
-        
+
         _PlayerAttributs.setHP(3);
         _PlayerAttributs.setSpeed(0.5f);
         _InteractionWall.setDistance(1f);
