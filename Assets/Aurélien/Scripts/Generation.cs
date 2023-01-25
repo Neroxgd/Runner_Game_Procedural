@@ -11,21 +11,27 @@ public class Generation : MonoBehaviour
     [SerializeField] private Transform end;
     [SerializeField][Range(1, 10)] private float SpeedOfObstacle;
     [SerializeField][Range(1, 10)] private int TimeBetweenSpawn;
+    [SerializeField] private int valueLevel = 0;
 
     void Start()
     {
-        if (PrefabsObstacle.Length < 10)
-        {
-            Debug.LogError("List of prefabs obstacles is lower than 10");
-            return;
-        }
         StartCoroutine(spawner());
     }
 
+    void Update()
+    {
+        if (valueLevel == 10)
+        {
+            indexBloc10Prefabs++;
+            valueLevel = 0;
+        }
+    }
     IEnumerator spawner()
     {
         yield return new WaitForSeconds(TimeBetweenSpawn);
+
         GameObject currentobstacle = Instantiate(PrefabsObstacle[Random.Range((indexBloc10Prefabs - 1) * 10, indexBloc10Prefabs * 10)], spawn.position, Quaternion.identity);
+        valueLevel++;
         ApplyCollider(currentobstacle);
         Sequence sequenceObstacle = DOTween.Sequence();
         sequenceObstacle.Append(currentobstacle.transform.DOMove(end.position, SpeedOfObstacle, false).SetEase(Ease.InSine));
@@ -45,5 +51,10 @@ public class Generation : MonoBehaviour
         {
             _GameObject.transform.GetChild(i).GetComponent<BoxCollider>().isTrigger = true;
         }
+    }
+
+    public int getValueLevel()
+    {
+        return valueLevel;
     }
 }
