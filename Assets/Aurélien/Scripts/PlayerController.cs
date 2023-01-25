@@ -67,18 +67,19 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         _InteractionWall.CheckRayCastWall(transform.position);
-
-        if(_InteractionWall.getTakingWall() && !_PlayerAttributs.getInteractionApply())
+        if (_InteractionWall.invoke)
         {
-            _PlayerAttributs.LoseHP();
+            LoseHPPlayer();
         }
     }
 
     void Start()
     {
+        
         _PlayerAttributs.setHP(3);
         _PlayerAttributs.setSpeed(0.5f);
-        _InteractionWall.setDistance(0.3f);
+        _InteractionWall.setDistance(1f);
+        //InteractionWall.wallhit += LoseHPPlayer;
     }
 
     private void Gravity()
@@ -108,5 +109,24 @@ public class PlayerController : MonoBehaviour
         yield return new WaitForSeconds(_PlayerAttributs.getSpeed());
         rbPlayer.constraints = RigidbodyConstraints.FreezePositionZ | RigidbodyConstraints.FreezeRotation;
         isOnRotate = false;
+    }
+
+    void LoseHPPlayer()
+    {
+        _InteractionWall.setTakingWall(true);
+        _PlayerAttributs.LoseHP();
+        _InteractionWall.invoke = false;
+        StartCoroutine(invicibility());
+    }
+
+    IEnumerator invicibility()
+    {
+        yield return new WaitForSeconds(0.3f);
+        _InteractionWall.setTakingWall(false);
+    }
+
+    public PlayerAttributs GetPlayerAttributs()
+    {
+        return _PlayerAttributs;
     }
 }

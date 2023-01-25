@@ -9,17 +9,20 @@ public class InteractionWall
     [SerializeField] float distance;
     [SerializeField] LayerMask _mask;
     [SerializeField] bool takingWall;
+    public bool invoke;
+
+    //public static event Action wallhit;
 
     public void CheckRayCastWall(Vector3 positionValue)
     {
         RaycastHit hit;
 
-        if (Physics.Raycast(positionValue,Vector3.forward , out hit , distance , _mask))
+        if (Physics.Raycast(positionValue,Vector3.forward , out hit , distance , _mask) && !takingWall)
         {
-            takingWall = true;
+            //wallhit?.Invoke();
+            invoke = true;
         }
     }
-
     public void setDistance(float value)
     {
         distance = value;

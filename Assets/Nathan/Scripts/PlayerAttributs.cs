@@ -8,8 +8,6 @@ public class PlayerAttributs
     [SerializeField] int hp;
     [SerializeField] float speed;
 
-    [SerializeField] bool InteractionApply;
-
     public void setHP(int value)
     {
         hp = value;
@@ -30,20 +28,9 @@ public class PlayerAttributs
         return speed;
     }
 
-    public bool getInteractionApply()
-    {
-        return InteractionApply;
-    }
-
-    public void setInteractionApply(bool value)
-    {
-        InteractionApply = value;
-    }
-
     public void LoseHP()
     {
         hp--;
-        InteractionApply = true;
     }
 
 }
