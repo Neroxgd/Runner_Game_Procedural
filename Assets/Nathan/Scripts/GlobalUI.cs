@@ -2,21 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class GlobalUI : MonoBehaviour
 {
     [SerializeField] PlayerController _PlayerController;
-    [SerializeField] GameObject[] UIs;
 
-    void Start()
-    {
-    }
+    [SerializeField] Generation _Generation;
+    [SerializeField] GameObject[] UIs;
 
     void Update()
     {
         sethp();
+        setLevel();
     }
-
 
     void sethp()
     {
@@ -31,5 +30,11 @@ public class GlobalUI : MonoBehaviour
                 UIs[0].transform.GetChild(i).gameObject.SetActive(true);
             }
         }   
+    }
+
+    void setLevel()
+    {
+        UIs[1].transform.GetChild(2).GetComponent<TMP_Text>().text = _Generation.getValueLevel().ToString();
+        UIs[1].transform.GetChild(1).GetComponent<Image>().fillAmount = _Generation.getValueLevel() / 10f;
     }
 }
