@@ -67,6 +67,11 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         _InteractionWall.CheckRayCastWall(transform.position);
+
+        if(_InteractionWall.getTakingWall() && !_PlayerAttributs.getInteractionApply())
+        {
+            _PlayerAttributs.LoseHP();
+        }
     }
 
     void Start()
