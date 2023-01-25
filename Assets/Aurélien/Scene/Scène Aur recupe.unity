@@ -562,71 +562,131 @@ PrefabInstance:
     - target: {fileID: 5427058751294815937, guid: 66a1ff40640272a4587e9208c33bbc0f,
         type: 3}
       propertyPath: PrefabsObstacle.Array.size
-      value: 11
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5427058751294815937, guid: 66a1ff40640272a4587e9208c33bbc0f,
         type: 3}
       propertyPath: PrefabsObstacle.Array.data[0]
       value: 
-      objectReference: {fileID: 4751279107462558201, guid: 592243dc39357d14aadb55503cb887d4,
+      objectReference: {fileID: 2875769615897325887, guid: 2b8a6764980e82c4fb7bd35677f6ae18,
         type: 3}
     - target: {fileID: 5427058751294815937, guid: 66a1ff40640272a4587e9208c33bbc0f,
         type: 3}
       propertyPath: PrefabsObstacle.Array.data[1]
       value: 
-      objectReference: {fileID: 2875769615897325887, guid: 2b8a6764980e82c4fb7bd35677f6ae18,
+      objectReference: {fileID: 2937216351258143793, guid: 894e8b35c241a124daaecac1dd807a11,
         type: 3}
     - target: {fileID: 5427058751294815937, guid: 66a1ff40640272a4587e9208c33bbc0f,
         type: 3}
       propertyPath: PrefabsObstacle.Array.data[2]
       value: 
-      objectReference: {fileID: 2937216351258143793, guid: 894e8b35c241a124daaecac1dd807a11,
+      objectReference: {fileID: 4751279107462558201, guid: 90609d23f0ed13c4299bac08e390ed21,
         type: 3}
     - target: {fileID: 5427058751294815937, guid: 66a1ff40640272a4587e9208c33bbc0f,
         type: 3}
       propertyPath: PrefabsObstacle.Array.data[3]
       value: 
-      objectReference: {fileID: 4751279107462558201, guid: 90609d23f0ed13c4299bac08e390ed21,
+      objectReference: {fileID: 4751279107462558201, guid: b1b999fa82f3bd24490d808dfb8e958c,
         type: 3}
     - target: {fileID: 5427058751294815937, guid: 66a1ff40640272a4587e9208c33bbc0f,
         type: 3}
       propertyPath: PrefabsObstacle.Array.data[4]
       value: 
-      objectReference: {fileID: 4751279107462558201, guid: b1b999fa82f3bd24490d808dfb8e958c,
+      objectReference: {fileID: 4751279107462558201, guid: 4ffed80f6536b0845993177326e78d9a,
         type: 3}
     - target: {fileID: 5427058751294815937, guid: 66a1ff40640272a4587e9208c33bbc0f,
         type: 3}
       propertyPath: PrefabsObstacle.Array.data[5]
       value: 
-      objectReference: {fileID: 4751279107462558201, guid: 55cc38d325970f848997544da4ff12b9,
+      objectReference: {fileID: 4751279107462558201, guid: 6b0f711e62adbf34b89c219a91400133,
         type: 3}
     - target: {fileID: 5427058751294815937, guid: 66a1ff40640272a4587e9208c33bbc0f,
         type: 3}
       propertyPath: PrefabsObstacle.Array.data[6]
       value: 
-      objectReference: {fileID: 4751279107462558201, guid: 623db61137946b545b9edcdd2882bd41,
+      objectReference: {fileID: 4751279107462558201, guid: a85078776a5ba29479814928ac5335f9,
         type: 3}
     - target: {fileID: 5427058751294815937, guid: 66a1ff40640272a4587e9208c33bbc0f,
         type: 3}
       propertyPath: PrefabsObstacle.Array.data[7]
       value: 
-      objectReference: {fileID: 4751279107462558201, guid: 799979522af715841b14a3e134c09100,
+      objectReference: {fileID: 4751279107462558201, guid: 428dc75e002a7a84387cdc7be7fa00d1,
         type: 3}
     - target: {fileID: 5427058751294815937, guid: 66a1ff40640272a4587e9208c33bbc0f,
         type: 3}
       propertyPath: PrefabsObstacle.Array.data[8]
       value: 
-      objectReference: {fileID: 4751279107462558201, guid: 2b8479a8668cffa44b8af29526683761,
+      objectReference: {fileID: 4751279107462558201, guid: 77a1c0fea77e5f9408e858edd1ab4524,
         type: 3}
     - target: {fileID: 5427058751294815937, guid: 66a1ff40640272a4587e9208c33bbc0f,
         type: 3}
       propertyPath: PrefabsObstacle.Array.data[9]
       value: 
-      objectReference: {fileID: 4751279107462558201, guid: 77a1c0fea77e5f9408e858edd1ab4524,
+      objectReference: {fileID: 4751279107462558201, guid: 7eebe8c1ee506b949ba8bf5c5aa03b48,
         type: 3}
     - target: {fileID: 5427058751294815937, guid: 66a1ff40640272a4587e9208c33bbc0f,
         type: 3}
       propertyPath: PrefabsObstacle.Array.data[10]
+      value: 
+      objectReference: {fileID: 4751279107462558201, guid: 7eebe8c1ee506b949ba8bf5c5aa03b48,
+        type: 3}
+    - target: {fileID: 5427058751294815937, guid: 66a1ff40640272a4587e9208c33bbc0f,
+        type: 3}
+      propertyPath: PrefabsObstacle.Array.data[11]
+      value: 
+      objectReference: {fileID: 2875769615897325887, guid: 2b8a6764980e82c4fb7bd35677f6ae18,
+        type: 3}
+    - target: {fileID: 5427058751294815937, guid: 66a1ff40640272a4587e9208c33bbc0f,
+        type: 3}
+      propertyPath: PrefabsObstacle.Array.data[12]
+      value: 
+      objectReference: {fileID: 2937216351258143793, guid: 894e8b35c241a124daaecac1dd807a11,
+        type: 3}
+    - target: {fileID: 5427058751294815937, guid: 66a1ff40640272a4587e9208c33bbc0f,
+        type: 3}
+      propertyPath: PrefabsObstacle.Array.data[13]
+      value: 
+      objectReference: {fileID: 4751279107462558201, guid: 90609d23f0ed13c4299bac08e390ed21,
+        type: 3}
+    - target: {fileID: 5427058751294815937, guid: 66a1ff40640272a4587e9208c33bbc0f,
+        type: 3}
+      propertyPath: PrefabsObstacle.Array.data[14]
+      value: 
+      objectReference: {fileID: 4751279107462558201, guid: b1b999fa82f3bd24490d808dfb8e958c,
+        type: 3}
+    - target: {fileID: 5427058751294815937, guid: 66a1ff40640272a4587e9208c33bbc0f,
+        type: 3}
+      propertyPath: PrefabsObstacle.Array.data[15]
+      value: 
+      objectReference: {fileID: 4751279107462558201, guid: 4ffed80f6536b0845993177326e78d9a,
+        type: 3}
+    - target: {fileID: 5427058751294815937, guid: 66a1ff40640272a4587e9208c33bbc0f,
+        type: 3}
+      propertyPath: PrefabsObstacle.Array.data[16]
+      value: 
+      objectReference: {fileID: 4751279107462558201, guid: 6b0f711e62adbf34b89c219a91400133,
+        type: 3}
+    - target: {fileID: 5427058751294815937, guid: 66a1ff40640272a4587e9208c33bbc0f,
+        type: 3}
+      propertyPath: PrefabsObstacle.Array.data[17]
+      value: 
+      objectReference: {fileID: 4751279107462558201, guid: a85078776a5ba29479814928ac5335f9,
+        type: 3}
+    - target: {fileID: 5427058751294815937, guid: 66a1ff40640272a4587e9208c33bbc0f,
+        type: 3}
+      propertyPath: PrefabsObstacle.Array.data[18]
+      value: 
+      objectReference: {fileID: 4751279107462558201, guid: 428dc75e002a7a84387cdc7be7fa00d1,
+        type: 3}
+    - target: {fileID: 5427058751294815937, guid: 66a1ff40640272a4587e9208c33bbc0f,
+        type: 3}
+      propertyPath: PrefabsObstacle.Array.data[19]
+      value: 
+      objectReference: {fileID: 4751279107462558201, guid: 77a1c0fea77e5f9408e858edd1ab4524,
+        type: 3}
+    - target: {fileID: 5427058751294815937, guid: 66a1ff40640272a4587e9208c33bbc0f,
+        type: 3}
+      propertyPath: PrefabsObstacle.Array.data[20]
       value: 
       objectReference: {fileID: 4751279107462558201, guid: 7eebe8c1ee506b949ba8bf5c5aa03b48,
         type: 3}
@@ -1302,18 +1362,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1526164816}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1538050524 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7212504640912952554, guid: ec6eae5cab2c49744aace746512848a1,
-    type: 3}
-  m_PrefabInstance: {fileID: 2103747275}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9793f47d317cc71488e2697c854a2c91, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1545941548
 GameObject:
   m_ObjectHideFlags: 0
@@ -1958,9 +2006,9 @@ MonoBehaviour:
   m_ActionEvents:
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1538050524}
+      - m_Target: {fileID: 7901154625385358251}
         m_TargetAssemblyTypeName: Inputs, Assembly-CSharp
-        m_MethodName: MoveLeft
+        m_MethodName: 
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1974,9 +2022,9 @@ MonoBehaviour:
     m_ActionName: Player/MoveLeft[/Mouse/leftButton]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1538050524}
+      - m_Target: {fileID: 7901154625385358249}
         m_TargetAssemblyTypeName: Inputs, Assembly-CSharp
-        m_MethodName: MoveRight
+        m_MethodName: 
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1990,9 +2038,9 @@ MonoBehaviour:
     m_ActionName: Player/MoveRight[/Mouse/rightButton]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1538050524}
+      - m_Target: {fileID: 7901154625385358249}
         m_TargetAssemblyTypeName: Inputs, Assembly-CSharp
-        m_MethodName: ChangeGravityUp
+        m_MethodName: 
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2006,9 +2054,9 @@ MonoBehaviour:
     m_ActionName: Player/ChangeGravityUp[/Keyboard/w,/Keyboard/upArrow]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1538050524}
+      - m_Target: {fileID: 7901154625385358251}
         m_TargetAssemblyTypeName: Inputs, Assembly-CSharp
-        m_MethodName: ChangeGravityLeft
+        m_MethodName: 
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2022,9 +2070,9 @@ MonoBehaviour:
     m_ActionName: Player/ChangeGravityLeft[/Keyboard/a,/Keyboard/leftArrow]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1538050524}
+      - m_Target: {fileID: 7901154625385358251}
         m_TargetAssemblyTypeName: Inputs, Assembly-CSharp
-        m_MethodName: ChangeGravityRight
+        m_MethodName: 
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
