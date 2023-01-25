@@ -190,10 +190,30 @@ PrefabInstance:
       propertyPath: m_Name
       value: // -- Useful Position -- //
       objectReference: {fileID: 0}
+    - target: {fileID: 3749413768704606378, guid: 4bdff07aaa66fdb4c8efc8b6d82f9212,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3749413769088749902, guid: 4bdff07aaa66fdb4c8efc8b6d82f9212,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3749413769417778125, guid: 4bdff07aaa66fdb4c8efc8b6d82f9212,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2.5
+      objectReference: {fileID: 0}
     - target: {fileID: 3749413769601734777, guid: 4bdff07aaa66fdb4c8efc8b6d82f9212,
         type: 3}
       propertyPath: m_LocalPosition.z
       value: -35.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3749413770253710278, guid: 4bdff07aaa66fdb4c8efc8b6d82f9212,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -2.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4bdff07aaa66fdb4c8efc8b6d82f9212, type: 3}
@@ -543,6 +563,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: gameManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 5427058751294815936, guid: 66a1ff40640272a4587e9208c33bbc0f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5427058751294815937, guid: 66a1ff40640272a4587e9208c33bbc0f,
         type: 3}
@@ -1512,7 +1537,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 60
+  field of view: 20
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -1538,7 +1563,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1568326806}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -10}
+  m_LocalPosition: {x: 0, y: 2.5, z: -20.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1751,6 +1776,11 @@ PrefabInstance:
       objectReference: {fileID: 111963705}
     - target: {fileID: 7212504640912952548, guid: ec6eae5cab2c49744aace746512848a1,
         type: 3}
+      propertyPath: Powergravity
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7212504640912952548, guid: ec6eae5cab2c49744aace746512848a1,
+        type: 3}
       propertyPath: maxRightXPos
       value: 
       objectReference: {fileID: 111963704}
@@ -1853,10 +1883,20 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5464809060315999268, guid: fe747ecb241f7294898347eee273bcfb,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5464809060319109450, guid: fe747ecb241f7294898347eee273bcfb,
         type: 3}
       propertyPath: m_Name
       value: mech
+      objectReference: {fileID: 0}
+    - target: {fileID: 5464809060319109450, guid: fe747ecb241f7294898347eee273bcfb,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5464809060319608104, guid: fe747ecb241f7294898347eee273bcfb,
         type: 3}
@@ -1881,17 +1921,17 @@ PrefabInstance:
     - target: {fileID: 5464809060319608104, guid: fe747ecb241f7294898347eee273bcfb,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.729
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5464809060319608104, guid: fe747ecb241f7294898347eee273bcfb,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.94
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5464809060319608104, guid: fe747ecb241f7294898347eee273bcfb,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -10.46
+      value: -7.503
       objectReference: {fileID: 0}
     - target: {fileID: 5464809060319608104, guid: fe747ecb241f7294898347eee273bcfb,
         type: 3}
@@ -1927,6 +1967,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8473199074314120962, guid: fe747ecb241f7294898347eee273bcfb,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8473199074314120962, guid: fe747ecb241f7294898347eee273bcfb,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fe747ecb241f7294898347eee273bcfb, type: 3}
@@ -1976,7 +2026,7 @@ MonoBehaviour:
   maxRightXPos: {fileID: 111963704}
   maxUpYPos: {fileID: 111963703}
   maxDownYPos: {fileID: 111963700}
-  Powergravity: 50
+  Powergravity: 0.1
   cam: {fileID: 1568326809}
 --- !u!114 &7901154625385358253
 MonoBehaviour:
@@ -2006,9 +2056,9 @@ MonoBehaviour:
   m_ActionEvents:
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7901154625385358251}
+      - m_Target: {fileID: 7901154625385358249}
         m_TargetAssemblyTypeName: Inputs, Assembly-CSharp
-        m_MethodName: 
+        m_MethodName: MoveLeft
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2024,7 +2074,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 7901154625385358249}
         m_TargetAssemblyTypeName: Inputs, Assembly-CSharp
-        m_MethodName: 
+        m_MethodName: MoveRight
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2040,7 +2090,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 7901154625385358249}
         m_TargetAssemblyTypeName: Inputs, Assembly-CSharp
-        m_MethodName: 
+        m_MethodName: ChangeGravityUp
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2054,9 +2104,9 @@ MonoBehaviour:
     m_ActionName: Player/ChangeGravityUp[/Keyboard/w,/Keyboard/upArrow]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7901154625385358251}
+      - m_Target: {fileID: 7901154625385358249}
         m_TargetAssemblyTypeName: Inputs, Assembly-CSharp
-        m_MethodName: 
+        m_MethodName: ChangeGravityLeft
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2070,9 +2120,9 @@ MonoBehaviour:
     m_ActionName: Player/ChangeGravityLeft[/Keyboard/a,/Keyboard/leftArrow]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7901154625385358251}
+      - m_Target: {fileID: 7901154625385358249}
         m_TargetAssemblyTypeName: Inputs, Assembly-CSharp
-        m_MethodName: 
+        m_MethodName: ChangeGravityRight
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2100,8 +2150,22 @@ Rigidbody:
   m_Mass: 1
   m_Drag: 0
   m_AngularDrag: 0.05
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 1
+--- !u!136 &7901154625385358267
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7901154625385358248}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 1
+  m_Height: 6.1322637
+  m_Direction: 1
+  m_Center: {x: 0, y: 3.0241516, z: 0}

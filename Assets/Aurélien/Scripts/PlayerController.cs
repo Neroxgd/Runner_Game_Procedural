@@ -18,28 +18,38 @@ public class PlayerController : MonoBehaviour
 
     public void Move(bool direction)
     {
-        if (IsOnGround && !isOnRotate && !DOTween.IsTweening(rbPlayer))
+        Ray ray = new Ray(transform.position + transform.up / 4, direction ? transform.right : -transform.right);
+        RaycastHit hit;
+        Debug.DrawRay(ray.origin, direction ? transform.right : -transform.right, Color.red);
+        if (IsOnGround && !isOnRotate && !DOTween.IsTweening(rbPlayer) && !Physics.Raycast(ray, out hit, 1f))
         {
             if (direction)
-                rbPlayer.DOMove(ClampPosPlayer(transform.right), _PlayerAttributs.getSpeed());
+                rbPlayer.DOMove(transform.position + transform.right, _PlayerAttributs.getSpeed()).OnComplete(FixedPosition);
             else
-                rbPlayer.DOMove(ClampPosPlayer(-transform.right), _PlayerAttributs.getSpeed());
-            print("ezzz");
+                rbPlayer.DOMove(transform.position + -transform.right, _PlayerAttributs.getSpeed()).OnComplete(FixedPosition);
         }
-        Debug.Log(IsOnGround + " " + isOnRotate + " " + DOTween.IsTweening(rbPlayer));
     }
 
-    private Vector3 ClampPosPlayer(Vector3 dir)
+    private void FixedPosition()
+    {
+        if (transform.eulerAngles.z == 90 || transform.eulerAngles.z == 270)
+            transform.position = new Vector3((Mathf.Round(transform.position.x / 2.5f) * 2.5f), Mathf.Round(transform.position.y), transform.position.z);
+        else
+            transform.position = new Vector3(Mathf.Round(transform.position.x), Mathf.Round(transform.position.y) + 0.003f, transform.position.z);
+    }
+
+    /*private Vector3 ClampPosPlayer(Vector3 dir)
     {
         Vector3 clampPos = transform.position + dir;
         clampPos = new Vector3(Mathf.Clamp(clampPos.x, maxLeftXPos.position.x, maxRightXPos.position.x), Mathf.Clamp(clampPos.y, maxDownYPos.position.y, maxUpYPos.position.y), clampPos.z);
         return clampPos;
-    }
+    }*/
 
     public void ChangeGravity(int directionGravity)
     {
-        if (IsOnGround)
+        if (IsOnGround && !DOTween.IsTweening(rbPlayer))
         {
+            IsOnGround = false;
             StartCoroutine(IsOnRotate());
             if (directionGravity == 0)
             {
@@ -58,7 +68,6 @@ public class PlayerController : MonoBehaviour
                 cam.transform.DOLocalRotate(new Vector3(0, 0, 90), _PlayerAttributs.getSpeed(), RotateMode.LocalAxisAdd);
             }
         }
-
     }
 
     void FixedUpdate()
@@ -68,16 +77,16 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        _InteractionWall.CheckRayCastWall(transform.position);
+        _InteractionWall.CheckRayCastWall(transform.position + transform.up / 4);
         if (_InteractionWall.invoke)
-        {
             LoseHPPlayer();
-        }
+
+        if (!DOTween.IsTweening(rbPlayer))
+            transform.eulerAngles = new Vector3(0, 0, Mathf.Round(transform.eulerAngles.z / 90f) * 90f);
     }
 
     void Start()
     {
-
         _PlayerAttributs.setHP(3);
         _PlayerAttributs.setSpeed(0.5f);
         _InteractionWall.setDistance(1f);
@@ -86,22 +95,21 @@ public class PlayerController : MonoBehaviour
 
     private void Gravity()
     {
-        Ray ray = new Ray(transform.position, -transform.up);
-        gravity += Powergravity * Time.fixedDeltaTime;
+        Ray ray = new Ray(transform.position + transform.up / 4, -transform.up);
+        gravity += Powergravity;
         rbPlayer.velocity += -transform.up * gravity;
         RaycastHit hit;
-
-        Debug.DrawRay(transform.position, -transform.up * 0.5f, Color.green);
-        if (Physics.Raycast(ray, out hit, 0.55f))
+        if (Physics.Raycast(ray, out hit, 0.3f))
         {
             IsOnGround = true;
             gravity = 1;
             rbPlayer.velocity = Vector3.zero;
             if (!DOTween.IsTweening(rbPlayer))
-                transform.position = hit.point + transform.up / 2;
+                transform.position = hit.point;
         }
         else
             IsOnGround = false;
+        Debug.DrawRay(ray.origin, -transform.up * 0.3f, Color.green);
     }
 
     IEnumerator IsOnRotate()
