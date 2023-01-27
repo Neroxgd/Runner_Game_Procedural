@@ -38,13 +38,6 @@ public class PlayerController : MonoBehaviour
             transform.position = new Vector3(Mathf.Round(transform.position.x), Mathf.Round(transform.position.y) + 0.003f, transform.position.z);
     }
 
-    /*private Vector3 ClampPosPlayer(Vector3 dir)
-    {
-        Vector3 clampPos = transform.position + dir;
-        clampPos = new Vector3(Mathf.Clamp(clampPos.x, maxLeftXPos.position.x, maxRightXPos.position.x), Mathf.Clamp(clampPos.y, maxDownYPos.position.y, maxUpYPos.position.y), clampPos.z);
-        return clampPos;
-    }*/
-
     public void ChangeGravity(int directionGravity)
     {
         if (IsOnGround && !DOTween.IsTweening(rbPlayer))
@@ -102,7 +95,7 @@ public class PlayerController : MonoBehaviour
         if (Physics.Raycast(ray, out hit, 0.3f))
         {
             IsOnGround = true;
-            gravity = 1;
+            gravity = 3;
             rbPlayer.velocity = Vector3.zero;
             if (!DOTween.IsTweening(rbPlayer))
                 transform.position = hit.point;
@@ -115,7 +108,10 @@ public class PlayerController : MonoBehaviour
     IEnumerator IsOnRotate()
     {
         isOnRotate = true;
-        rbPlayer.constraints = RigidbodyConstraints.FreezePosition;
+        if (transform.eulerAngles.z == 90 || transform.eulerAngles.z == 270)
+            rbPlayer.constraints = RigidbodyConstraints.FreezePositionY;
+        else 
+            rbPlayer.constraints = RigidbodyConstraints.FreezePositionX;
         yield return new WaitForSeconds(_PlayerAttributs.getSpeed());
         rbPlayer.constraints = RigidbodyConstraints.FreezePositionZ | RigidbodyConstraints.FreezeRotation;
         isOnRotate = false;

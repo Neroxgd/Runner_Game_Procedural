@@ -2026,7 +2026,7 @@ MonoBehaviour:
   maxRightXPos: {fileID: 111963704}
   maxUpYPos: {fileID: 111963703}
   maxDownYPos: {fileID: 111963700}
-  Powergravity: 0.1
+  Powergravity: 0.05
   cam: {fileID: 1568326809}
 --- !u!114 &7901154625385358253
 MonoBehaviour:
