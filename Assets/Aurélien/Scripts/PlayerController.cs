@@ -88,11 +88,11 @@ public class PlayerController : MonoBehaviour
 
     private void Gravity()
     {
-        Ray ray = new Ray(transform.position + transform.up / 4, -transform.up);
+        Ray ray = new Ray(transform.position + transform.up / 3f, -transform.up);
         gravity += Powergravity;
         rbPlayer.velocity += -transform.up * gravity;
         RaycastHit hit;
-        if (Physics.Raycast(ray, out hit, 0.35f))
+        if (Physics.Raycast(ray, out hit, 0.4f))
         {
             IsOnGround = true;
             gravity = 1;

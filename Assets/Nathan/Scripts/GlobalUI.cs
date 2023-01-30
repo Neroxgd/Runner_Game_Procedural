@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using DG.Tweening;
 
 public class GlobalUI : MonoBehaviour
 {
@@ -19,7 +20,7 @@ public class GlobalUI : MonoBehaviour
 
     void sethp()
     {
-        for (int i=0 ; i < UIs[0].transform.childCount ; i++)
+        for (int i = 0; i < UIs[0].transform.childCount; i++)
         {
             if (i >= _PlayerController.GetPlayerAttributs().getHP())
             {
@@ -29,12 +30,12 @@ public class GlobalUI : MonoBehaviour
             {
                 UIs[0].transform.GetChild(i).gameObject.SetActive(true);
             }
-        }   
+        }
     }
 
     void setLevel()
     {
         UIs[1].transform.GetChild(2).GetComponent<TMP_Text>().text = _Generation.getValueLevel().ToString();
-        UIs[1].transform.GetChild(1).GetComponent<Image>().fillAmount = _Generation.getValueLevel() / 10f;
+        UIs[1].transform.GetChild(1).GetComponent<Image>().DOFillAmount(_Generation.getValueLevel() / 10f, 0.5f);
     }
 }
