@@ -5,8 +5,9 @@ using DG.Tweening;
 
 public class Generation : MonoBehaviour
 {
-    [SerializeField] private GameObject[] PrefabsObstacle;
-    private int indexBloc10Prefabs = 1;
+    //[SerializeField] private GameObject[] PrefabsObstacle;
+    [SerializeField] List<PrefabsGeneration> prefabsIndex = new List<PrefabsGeneration>();
+    private int index;
     [SerializeField] private Transform spawn;
     [SerializeField] private Transform end;
     [SerializeField][Range(1, 10)] private float SpeedOfObstacle;
@@ -15,6 +16,7 @@ public class Generation : MonoBehaviour
 
     void Start()
     {
+        index = 0;
         StartCoroutine(spawner());
     }
 
@@ -22,7 +24,7 @@ public class Generation : MonoBehaviour
     {
         if (valueLevel == 10)
         {
-            indexBloc10Prefabs++;
+            index++;
             valueLevel = 0;
         }
     }
@@ -30,12 +32,12 @@ public class Generation : MonoBehaviour
     {
         yield return new WaitForSeconds(TimeBetweenSpawn);
 
-        GameObject currentobstacle = Instantiate(PrefabsObstacle[Random.Range((indexBloc10Prefabs - 1) * 10, indexBloc10Prefabs * 10)], spawn.position, Quaternion.identity);
+        GameObject currentObstacle = Instantiate(prefabsIndex[index].prefabsGameObjects[Random.Range(0 , prefabsIndex[index].prefabsGameObjects.Count)] , spawn.position , Quaternion.identity);
         valueLevel++;
-        ApplyCollider(currentobstacle);
+        ApplyCollider(currentObstacle);
         Sequence sequenceObstacle = DOTween.Sequence();
-        sequenceObstacle.Append(currentobstacle.transform.DOMove(end.position, SpeedOfObstacle, false).SetEase(Ease.InSine));
-        sequenceObstacle.InsertCallback(SpeedOfObstacle * 0.5f, () => DestroyObstacles(currentobstacle)).SetSpeedBased(true);
+        sequenceObstacle.Append(currentObstacle.transform.DOMove(end.position, SpeedOfObstacle, false).SetEase(Ease.InSine));
+        sequenceObstacle.InsertCallback(SpeedOfObstacle * 0.5f, () => DestroyObstacles(currentObstacle)).SetSpeedBased(true);
         StartCoroutine(spawner());
     }
 
