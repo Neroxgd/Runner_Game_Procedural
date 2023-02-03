@@ -47,7 +47,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3749413768704606378}
   m_Layer: 0
-  m_Name: max down y player position
+  m_Name: fix down
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -109,7 +109,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3749413769088749902}
   m_Layer: 0
-  m_Name: max up y player position
+  m_Name: fix up
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -140,7 +140,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3749413769417778125}
   m_Layer: 0
-  m_Name: max right x player position
+  m_Name: fix right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -202,7 +202,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3749413770253710278}
   m_Layer: 0
-  m_Name: max left x player position
+  m_Name: fix left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

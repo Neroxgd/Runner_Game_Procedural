@@ -9,7 +9,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] PlayerAttributs _PlayerAttributs = new PlayerAttributs();
     [SerializeField] InteractionWall _InteractionWall = new InteractionWall();
     [SerializeField] private Rigidbody rbPlayer;
-    [SerializeField] private Transform maxLeftXPos, maxRightXPos, maxUpYPos, maxDownYPos;
+    [SerializeField] private Transform fixDown, fixLeft, fixUp, fixRight;
     [SerializeField] private Transform fixedposdown, fixedposleft, fixedposup, fixedposright;
     [SerializeField] private float Powergravity = 9.81f;
     [SerializeField] private Transform[] posToMove;
@@ -17,29 +17,20 @@ public class PlayerController : MonoBehaviour
     private int indexMove = 2;
     [SerializeField] private Camera cam;
     private bool isOnRotate = false;
-    private bool IsOnGround = false;
+    private bool isOnGround = false;
+    private bool isOnObstacle = false;
     private float gravity = 0;
     [SerializeField] private Ease ease;
 
     public void Move(bool direction)
     {
 
-        if (IsOnGround && !isOnRotate && !DOTween.IsTweening(rbPlayer))
+        if (isOnGround && !isOnRotate && !isOnObstacle && !DOTween.IsTweening(rbPlayer))
         {
             indexMove = Mathf.Clamp(indexMove += direction ? 1 : -1, 0, posToMove.Length - 1);
             // StartCoroutine(TimeMove());
             rbPlayer.DOMove(posToMove[indexMove].position, _PlayerAttributs.getSpeed()).SetEase(ease);
         }
-        // FixedPosMove();
-
-        IEnumerator TimeMove()
-        {
-            PosMove.SetParent(null);
-            yield return new WaitForSeconds(_PlayerAttributs.getSpeed());
-            PosMove.SetParent(transform);
-        }
-
-
 
         // Ray ray = new Ray(transform.position + transform.up / 4, direction ? transform.right : -transform.right);
         // RaycastHit hit;
@@ -54,16 +45,62 @@ public class PlayerController : MonoBehaviour
     }
 
 
-    private void FixedIndexHorizontal()
+    private void FixedIndexHorizontal(int currentEulerAngle)
     {
-        if (transform.eulerAngles.z == 90)
+        transform.eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.y, Mathf.Round(transform.eulerAngles.z));
+        if (transform.eulerAngles.z == 0)
         {
-            indexMove = posToMove.Length - 1;
+            if (currentEulerAngle == 90)
+            {
+                indexMove = posToMove.Length - 1;
+                transform.position = new Vector3(fixRight.position.x, transform.position.y, transform.position.z);
+            }
+            else
+            {
+                indexMove = 0;
+                transform.position = new Vector3(fixLeft.position.x, transform.position.y, transform.position.z);
+            }
+        }
+        else if (transform.eulerAngles.z == 90)
+        {
+            if (currentEulerAngle == 0)
+            {
+                indexMove = 0;
+                transform.position = new Vector3(transform.position.x, fixDown.position.y, transform.position.z);
+            }
+            else
+            {
+                indexMove = posToMove.Length - 1;
+                transform.position = new Vector3(transform.position.x, fixUp.position.y, transform.position.z);
+            }
+        }
+        else if (transform.eulerAngles.z == 180)
+        {
+            if (currentEulerAngle == 90)
+            {
+                indexMove = 0;
+                transform.position = new Vector3(fixRight.position.x, transform.position.y, transform.position.z);
+            }
+            else
+            {
+                indexMove = posToMove.Length - 1;
+                transform.position = new Vector3(fixLeft.position.x, transform.position.y, transform.position.z);
+            }
         }
         else if (transform.eulerAngles.z == 270)
         {
-            indexMove = 0;
+            if (currentEulerAngle == 0)
+            {
+                indexMove = posToMove.Length - 1;
+                transform.position = new Vector3(transform.position.x, fixDown.position.y, transform.position.z);
+            }
+            else
+            {
+                indexMove = 0;
+                transform.position = new Vector3(transform.position.x, fixUp.position.y, transform.position.z);
+            }
         }
+        print(transform.eulerAngles.z + " " + currentEulerAngle);
         FixedPosMove();
     }
 
@@ -127,9 +164,11 @@ public class PlayerController : MonoBehaviour
 
     public void ChangeGravity(int directionGravity)
     {
-        if (IsOnGround && !DOTween.IsTweening(rbPlayer))
+        if (isOnGround && !DOTween.IsTweening(rbPlayer))
         {
-            IsOnGround = false;
+            int currentEulerAngle = (int)transform.eulerAngles.z;
+            print(currentEulerAngle);
+            isOnGround = false;
             StartCoroutine(IsOnRotate());
             if (directionGravity == 0)
             {
@@ -139,12 +178,12 @@ public class PlayerController : MonoBehaviour
 
             else if (directionGravity == -1)
             {
-                transform.DOLocalRotate(new Vector3(0, 0, -90), _PlayerAttributs.getSpeed(), RotateMode.LocalAxisAdd).OnComplete(FixedIndexHorizontal);
+                transform.DOLocalRotate(new Vector3(0, 0, -90), _PlayerAttributs.getSpeed(), RotateMode.LocalAxisAdd).OnComplete(() => FixedIndexHorizontal(currentEulerAngle));
                 cam.transform.DOLocalRotate(new Vector3(0, 0, -90), _PlayerAttributs.getSpeed(), RotateMode.LocalAxisAdd);
             }
             else if (directionGravity == 1)
             {
-                transform.DOLocalRotate(new Vector3(0, 0, 90), _PlayerAttributs.getSpeed(), RotateMode.LocalAxisAdd).OnComplete(FixedIndexHorizontal);
+                transform.DOLocalRotate(new Vector3(0, 0, 90), _PlayerAttributs.getSpeed(), RotateMode.LocalAxisAdd).OnComplete(() => FixedIndexHorizontal(currentEulerAngle));
                 cam.transform.DOLocalRotate(new Vector3(0, 0, 90), _PlayerAttributs.getSpeed(), RotateMode.LocalAxisAdd);
             }
         }
@@ -163,7 +202,7 @@ public class PlayerController : MonoBehaviour
 
         if (!DOTween.IsTweening(rbPlayer))
             transform.eulerAngles = new Vector3(0, 0, Mathf.Round(transform.eulerAngles.z / 90f) * 90f);
-        if (!IsOnGround && !DOTween.IsTweening(rbPlayer))
+        if (!isOnGround && !DOTween.IsTweening(rbPlayer))
             FixedPosMove();
     }
 
@@ -177,27 +216,31 @@ public class PlayerController : MonoBehaviour
 
     private void Gravity()
     {
-        Ray ray = new Ray(transform.position + transform.up / 3f, -transform.up);
+        Ray ray = new Ray(transform.position + transform.up / 1.5f, -transform.up);
         gravity += Powergravity;
         rbPlayer.velocity += -transform.up * gravity;
         RaycastHit hit;
-        if (Physics.Raycast(ray, out hit, 0.4f))
+        if (Physics.Raycast(ray, out hit, 0.8f))
         {
-            IsOnGround = true;
+            if (hit.transform.CompareTag("Wall"))
+                isOnObstacle = true;
+            else
+                isOnObstacle = false;
+            isOnGround = true;
             gravity = 1;
             rbPlayer.velocity = Vector3.zero;
             if (!DOTween.IsTweening(rbPlayer))
                 transform.position = hit.point;
         }
         else
-            IsOnGround = false;
-        Debug.DrawRay(ray.origin, -transform.up * 0.35f, Color.green);
+            isOnGround = false;
+        Debug.DrawRay(ray.origin, -transform.up * 0.8f, Color.green);
     }
 
     IEnumerator IsOnRotate()
     {
         isOnRotate = true;
-        IsOnGround = false;
+        isOnGround = false;
         if (transform.eulerAngles.z == 90 || transform.eulerAngles.z == 270)
             rbPlayer.constraints = RigidbodyConstraints.FreezePositionY;
 

@@ -464,6 +464,8 @@ GameObject:
   - component: {fileID: 3135672723394088151}
   - component: {fileID: 3135672723394088148}
   - component: {fileID: 3135672723394088149}
+  - component: {fileID: 6854615213075180231}
+  - component: {fileID: 2168711895991937429}
   m_Layer: 0
   m_Name: Prefab_Enemy_Walker
   m_TagString: Untagged
@@ -649,7 +651,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _PlayerAttributs:
     hp: 0
-    speed: 0
+    speed: 10
   _InteractionWall:
     distance: 0
     _mask:
@@ -658,12 +660,24 @@ MonoBehaviour:
     takingWall: 0
     invoke: 0
   rbPlayer: {fileID: 3135672723394088106}
-  maxLeftXPos: {fileID: 0}
-  maxRightXPos: {fileID: 0}
-  maxUpYPos: {fileID: 0}
-  maxDownYPos: {fileID: 0}
+  fixDown: {fileID: 0}
+  fixLeft: {fileID: 0}
+  fixUp: {fileID: 0}
+  fixRight: {fileID: 0}
+  fixedposdown: {fileID: 0}
+  fixedposleft: {fileID: 0}
+  fixedposup: {fileID: 0}
+  fixedposright: {fileID: 0}
   Powergravity: 0.01
+  posToMove:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  PosMove: {fileID: 0}
   cam: {fileID: 0}
+  ease: 1
 --- !u!114 &3135672723394088149
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -677,6 +691,67 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _playerController: {fileID: 3135672723394088148}
+--- !u!114 &6854615213075180231
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5443548725399727117}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92037d4409f83834bba9585f7e26b471, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _generation: {fileID: 0}
+  legR: {fileID: 0}
+  legL: {fileID: 0}
+  PosToMoveLegR: {fileID: 0}
+  PosToMoveLegL: {fileID: 0}
+--- !u!114 &2168711895991937429
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5443548725399727117}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2d8418b0b9634b1892b0268dd9c2743, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boneShape: 1
+  drawBones: 1
+  drawTripods: 0
+  boneSize: 1
+  tripodSize: 1
+  boneColor: {r: 0, g: 0, b: 1, a: 0.5}
+  m_Transforms:
+  - {fileID: 5869901150155348993}
+  - {fileID: 1844447526450237875}
+  - {fileID: 2959106619317694338}
+  - {fileID: 3451168948915040085}
+  - {fileID: 5110419324169724215}
+  - {fileID: 91739168825012964}
+  - {fileID: 4485644036430706987}
+  - {fileID: 3979390087751083170}
+  - {fileID: 2969703840282947705}
+  - {fileID: 4695433649625095601}
+  - {fileID: 1057337549061274728}
+  - {fileID: 6830329544100034351}
+  - {fileID: 5266546742855244545}
+  - {fileID: 5119324624931260535}
+  - {fileID: 1214398078225878626}
+  - {fileID: 4556254746046311056}
+  - {fileID: 3513016302407712125}
+  - {fileID: 4228515062115353284}
+  - {fileID: 4222143515368492979}
+  - {fileID: 7126800685665944318}
+  - {fileID: 9199568000418118996}
+  - {fileID: 5661907852649164859}
+  - {fileID: 465722261687633373}
+  - {fileID: 8061063388470757021}
+  - {fileID: 79483067134700658}
 --- !u!1 &5454249196062760082
 GameObject:
   m_ObjectHideFlags: 0

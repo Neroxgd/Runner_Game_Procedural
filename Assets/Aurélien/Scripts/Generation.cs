@@ -10,6 +10,7 @@ public class Generation : MonoBehaviour
     [SerializeField] private Transform spawn;
     [SerializeField] private Transform end;
     [SerializeField][Range(1, 10)] private float SpeedOfObstacle;
+    public float getSpeedOfObstacle { get { return SpeedOfObstacle; } }
     [SerializeField][Range(1, 10)] private int TimeBetweenSpawn;
     [SerializeField] private int valueLevel = 0;
 
@@ -30,7 +31,7 @@ public class Generation : MonoBehaviour
     {
         yield return new WaitForSeconds(TimeBetweenSpawn);
 
-        GameObject currentobstacle = Instantiate(PrefabsObstacle[Random.Range((indexBloc10Prefabs - 1) * 10, indexBloc10Prefabs * 10)], spawn.position, Quaternion.identity);
+        GameObject currentobstacle = Instantiate(PrefabsObstacle[Random.Range((indexBloc10Prefabs - 1) * PrefabsObstacle.Length, indexBloc10Prefabs * PrefabsObstacle.Length)], spawn.position, Quaternion.identity);
         valueLevel++;
         ApplyCollider(currentobstacle);
         Sequence sequenceObstacle = DOTween.Sequence();
