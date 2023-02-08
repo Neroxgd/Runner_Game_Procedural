@@ -57,15 +57,12 @@ public class Walking : MonoBehaviour
 
     void LateUpdate()
     {
-        if (DOTween.IsTweening(transform))
+        if (DOTween.IsTweening(transform.GetComponent<Rigidbody>()))
         {
             legR.DOKill(false);
             legL.DOKill(false);
-            rbLegR.velocity = Vector3.zero;
-            rbLegL.velocity = Vector3.zero;
             rbLegR.isKinematic = true;
             rbLegL.isKinematic = true;
-            print("égpozejgz");
         }
     }
 }

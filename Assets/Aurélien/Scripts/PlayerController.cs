@@ -28,22 +28,9 @@ public class PlayerController : MonoBehaviour
         if (isOnGround && !isOnRotate && !isOnObstacle && !DOTween.IsTweening(rbPlayer))
         {
             indexMove = Mathf.Clamp(indexMove += direction ? 1 : -1, 0, posToMove.Length - 1);
-            // StartCoroutine(TimeMove());
             rbPlayer.DOMove(posToMove[indexMove].position, _PlayerAttributs.getSpeed()).SetEase(ease);
         }
-
-        // Ray ray = new Ray(transform.position + transform.up / 4, direction ? transform.right : -transform.right);
-        // RaycastHit hit;
-        // Debug.DrawRay(ray.origin, direction ? transform.right : -transform.right, Color.red);
-        // if (IsOnGround && !isOnRotate && !DOTween.IsTweening(rbPlayer) && !Physics.Raycast(ray, out hit, 1f))
-        // {
-        //     if (direction)
-        //         rbPlayer.DOMove(transform.position + transform.right, _PlayerAttributs.getSpeed()).OnComplete(FixedPosition);
-        //     else
-        //         rbPlayer.DOMove(transform.position + -transform.right, _PlayerAttributs.getSpeed()).OnComplete(FixedPosition);
-        // }
     }
-
 
     private void FixedIndexHorizontal(int currentEulerAngle)
     {
@@ -112,10 +99,6 @@ public class PlayerController : MonoBehaviour
 
     private void FixedPosMove()
     {
-        // FixedIndexHorizontal();
-        // FixedPosition();
-        // PosMove.RotateAround(posToMove[indexMove].position, transform.right, 180);
-        // PosMove.SetParent(null);
         if (transform.eulerAngles.z == 0)
         {
             PosMove.position = fixedposdown.position;
@@ -136,30 +119,6 @@ public class PlayerController : MonoBehaviour
             PosMove.position = fixedposright.position;
             PosMove.eulerAngles = new Vector3(0, 0, 90);
         }
-
-
-        // StartCoroutine(waitFixedIndex());
-        // IEnumerator waitFixedIndex()
-        // {
-        //     int fixedIndex = 100;
-        //     for (int i = 0; i < posToMove.Length - 1; i++)
-        //         if (Vector3.Distance(transform.position, posToMove[i].position) < fixedIndex)
-        //         {
-        //             fixedIndex = i;
-        //             indexMove = fixedIndex;
-        //         }
-        //     yield return new WaitUntil(()=> IsOnGround && Vector3.Distance(transform.position, posToMove[indexMove].position) > 0.5f);
-        //     transform.position = posToMove[indexMove].position;
-        //     PosMove.SetParent(transform);
-        // }
-    }
-
-    private void FixedPosition()
-    {
-        if (transform.eulerAngles.z == 90 || transform.eulerAngles.z == 270)
-            transform.position = new Vector3((Mathf.Round(transform.position.x / 2.5f) * 2.5f), Mathf.Round(transform.position.y) + 0.4f, transform.position.z);
-        else
-            transform.position = new Vector3(Mathf.Round(transform.position.x), Mathf.Round(transform.position.y) + 0.003f, transform.position.z);
     }
 
     public void ChangeGravity(int directionGravity)
