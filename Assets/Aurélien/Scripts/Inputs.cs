@@ -6,6 +6,7 @@ using UnityEngine.InputSystem;
 public class Inputs : MonoBehaviour
 {
     [SerializeField] private PlayerController _playerController;
+    [SerializeField] private LazerShoot _lazerShoot;
 
     // false = left
     // true = right
@@ -21,8 +22,5 @@ public class Inputs : MonoBehaviour
 
     public void ChangeGravityRight(InputAction.CallbackContext context) { if (context.started) _playerController.ChangeGravity(1); }
 
-    void Update()
-    {
-
-    }
+    public void ShootLazer(InputAction.CallbackContext context) { if (context.started) _lazerShoot.ShootLazer(); }
 }

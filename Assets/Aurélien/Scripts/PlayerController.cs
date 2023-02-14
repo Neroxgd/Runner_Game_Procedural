@@ -1,5 +1,5 @@
 using System.Collections;
-using System.Collections.Generic;
+using UnityEngine.Events;
 using UnityEngine;
 using DG.Tweening;
 using System;
@@ -14,18 +14,21 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float Powergravity = 9.81f;
     [SerializeField] private Transform[] posToMove;
     [SerializeField] private Transform PosMove;
+    
     private int indexMove = 2;
     [SerializeField] private Camera cam;
+    [SerializeField] private Ease ease;
+    [SerializeField] private UnityEvent killTweenLeg; 
     private bool isOnRotate = false;
-    private bool isOnGround = false;
+    public bool IsOnGround { get; set;} = false;
     private bool isOnObstacle = false;
     private float gravity = 0;
-    [SerializeField] private Ease ease;
+    
 
     public void Move(bool direction)
     {
 
-        if (isOnGround && !isOnRotate && !isOnObstacle && !DOTween.IsTweening(rbPlayer))
+        if (IsOnGround && !isOnRotate && !isOnObstacle && !DOTween.IsTweening(rbPlayer))
         {
             indexMove = Mathf.Clamp(indexMove += direction ? 1 : -1, 0, posToMove.Length - 1);
             rbPlayer.DOMove(posToMove[indexMove].position, _PlayerAttributs.getSpeed()).SetEase(ease);
@@ -87,7 +90,6 @@ public class PlayerController : MonoBehaviour
                 transform.position = new Vector3(transform.position.x, fixUp.position.y, transform.position.z);
             }
         }
-        print(transform.eulerAngles.z + " " + currentEulerAngle);
         FixedPosMove();
     }
 
@@ -123,11 +125,11 @@ public class PlayerController : MonoBehaviour
 
     public void ChangeGravity(int directionGravity)
     {
-        if (isOnGround && !DOTween.IsTweening(rbPlayer))
+        if (IsOnGround && !DOTween.IsTweening(rbPlayer))
         {
             int currentEulerAngle = (int)transform.eulerAngles.z;
-            print(currentEulerAngle);
-            isOnGround = false;
+            IsOnGround = false;
+            killTweenLeg.Invoke();
             StartCoroutine(IsOnRotate());
             if (directionGravity == 0)
             {
@@ -161,7 +163,7 @@ public class PlayerController : MonoBehaviour
 
         if (!DOTween.IsTweening(rbPlayer))
             transform.eulerAngles = new Vector3(0, 0, Mathf.Round(transform.eulerAngles.z / 90f) * 90f);
-        if (!isOnGround && !DOTween.IsTweening(rbPlayer))
+        if (!IsOnGround && !DOTween.IsTweening(rbPlayer))
             FixedPosMove();
     }
 
@@ -185,21 +187,21 @@ public class PlayerController : MonoBehaviour
                 isOnObstacle = true;
             else
                 isOnObstacle = false;
-            isOnGround = true;
+            IsOnGround = true;
             gravity = 1;
             rbPlayer.velocity = Vector3.zero;
             if (!DOTween.IsTweening(rbPlayer))
                 transform.position = hit.point;
         }
         else
-            isOnGround = false;
+            IsOnGround = false;
         Debug.DrawRay(ray.origin, -transform.up * 0.8f, Color.green);
     }
 
     IEnumerator IsOnRotate()
     {
         isOnRotate = true;
-        isOnGround = false;
+        IsOnGround = false;
         if (transform.eulerAngles.z == 90 || transform.eulerAngles.z == 270)
             rbPlayer.constraints = RigidbodyConstraints.FreezePositionY;
 

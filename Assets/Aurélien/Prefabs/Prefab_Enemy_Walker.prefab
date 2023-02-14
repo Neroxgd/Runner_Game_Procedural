@@ -466,6 +466,8 @@ GameObject:
   - component: {fileID: 3135672723394088149}
   - component: {fileID: 6854615213075180231}
   - component: {fileID: 2168711895991937429}
+  - component: {fileID: 7398945398856523496}
+  - component: {fileID: 5535347997382464651}
   m_Layer: 0
   m_Name: Prefab_Enemy_Walker
   m_TagString: Untagged
@@ -632,6 +634,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 109245a9-608f-495d-b63e-683ba65129e6
     m_ActionName: Player/ChangeGravityRight[/Keyboard/d,/Keyboard/rightArrow]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3135672723394088149}
+        m_TargetAssemblyTypeName: Inputs, Assembly-CSharp
+        m_MethodName: ShootLazer
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 10367d97-8987-4d9e-98d7-6da85347c5e3
+    m_ActionName: Player/ShootLazer[/Mouse/middleButton,/Mouse/forwardButton]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -678,6 +696,21 @@ MonoBehaviour:
   PosMove: {fileID: 0}
   cam: {fileID: 0}
   ease: 1
+  killTweenLeg:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6854615213075180231}
+        m_TargetAssemblyTypeName: Walking, Assembly-CSharp
+        m_MethodName: KillTweenLeg
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &3135672723394088149
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -691,6 +724,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _playerController: {fileID: 3135672723394088148}
+  _lazerShoot: {fileID: 0}
 --- !u!114 &6854615213075180231
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -708,6 +742,12 @@ MonoBehaviour:
   legL: {fileID: 0}
   PosToMoveLegR: {fileID: 0}
   PosToMoveLegL: {fileID: 0}
+  curve:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!114 &2168711895991937429
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -752,6 +792,39 @@ MonoBehaviour:
   - {fileID: 465722261687633373}
   - {fileID: 8061063388470757021}
   - {fileID: 79483067134700658}
+--- !u!114 &7398945398856523496
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5443548725399727117}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f042ca4497d1365448110fb3450c90ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lazerSound: {fileID: 8300000, guid: 37025960c61b77245872d410c9640b6b, type: 3}
+  lazer: {fileID: 131168244264400096, guid: 21f74e5b62980434799301dc168aa965, type: 3}
+  spawnPoint: {fileID: 0}
+  speedLazer: 10
+  easeLazer: 0
+--- !u!114 &5535347997382464651
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5443548725399727117}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fff0960ef4ea6e04eac66b4a7fd2189d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_RigLayers:
+  - m_Rig: {fileID: 0}
+    m_Active: 1
+  m_Effectors: []
 --- !u!1 &5454249196062760082
 GameObject:
   m_ObjectHideFlags: 0
