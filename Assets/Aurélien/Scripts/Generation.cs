@@ -13,6 +13,7 @@ public class Generation : MonoBehaviour
     public float getSpeedOfObstacle { get { return SpeedOfObstacle; } }
     [SerializeField][Range(1, 10)] private int TimeBetweenSpawn;
     [SerializeField] private int valueLevel = 0;
+    [SerializeField] private Camera cam;
 
     void Start()
     {
@@ -34,16 +35,20 @@ public class Generation : MonoBehaviour
         GameObject currentobstacle = Instantiate(PrefabsObstacle[Random.Range((indexBloc10Prefabs - 1) * PrefabsObstacle.Length, indexBloc10Prefabs * PrefabsObstacle.Length)], spawn.position, Quaternion.identity);
         valueLevel++;
         ApplyCollider(currentobstacle);
-        Sequence sequenceObstacle = DOTween.Sequence();
-        sequenceObstacle.Append(currentobstacle.transform.DOMove(end.position, SpeedOfObstacle, false).SetEase(Ease.InSine));
-        sequenceObstacle.InsertCallback(SpeedOfObstacle * 0.5f, () => DestroyObstacles(currentobstacle)).SetSpeedBased(true);
+        currentobstacle.transform.DOMove(end.position, SpeedOfObstacle, false).SetEase(Ease.InSine).SetSpeedBased(true);
+        StartCoroutine(ObstacleDespawn(currentobstacle));
+        IEnumerator ObstacleDespawn(GameObject destroyObstacle)
+        {
+            yield return new WaitUntil(() => Vector3.Distance(destroyObstacle.transform.position, cam.transform.position) < 10);
+            DestroyObstacles(destroyObstacle);
+        }
         StartCoroutine(spawner());
     }
 
     private void DestroyObstacles(GameObject currentobject)
     {
         for (int i = 0; i < currentobject.transform.childCount; i++)
-            currentobject.transform.GetChild(i).DOScale(Vector3.zero, SpeedOfObstacle * 0.5f).SetEase(Ease.InCirc).OnComplete(() => Destroy(currentobject));
+            currentobject.transform.GetChild(i).DOScale(Vector3.zero, 0.2f).SetEase(Ease.InCirc).OnComplete(() => Destroy(currentobject));
     }
 
     void ApplyCollider(GameObject _GameObject)
