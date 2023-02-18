@@ -170,6 +170,17 @@
                     "action": "ShootLazer",
                     "isComposite": false,
                     "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "8317db89-51f1-498f-8e2e-00e83a3f4f9e",
+                    "path": "<Keyboard>/f",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ShootLazer",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         }

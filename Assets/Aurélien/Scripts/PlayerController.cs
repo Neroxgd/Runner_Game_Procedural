@@ -170,7 +170,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         _PlayerAttributs.setHP(3);
-        _PlayerAttributs.setSpeed(0.5f);
+        _PlayerAttributs.setSpeed(0.1f);
         _InteractionWall.setDistance(1f);
         //InteractionWall.wallhit += LoseHPPlayer;
     }
