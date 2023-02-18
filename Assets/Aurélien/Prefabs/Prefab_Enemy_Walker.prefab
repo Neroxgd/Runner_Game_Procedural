@@ -809,6 +809,18 @@ MonoBehaviour:
   spawnPoint: {fileID: 0}
   speedLazer: 10
   easeLazer: 0
+  shakeLazerX:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  shakeLazerY:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!114 &5535347997382464651
 MonoBehaviour:
   m_ObjectHideFlags: 0
