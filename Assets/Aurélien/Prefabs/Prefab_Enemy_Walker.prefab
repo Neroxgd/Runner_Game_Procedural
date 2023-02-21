@@ -1177,7 +1177,7 @@ MonoBehaviour:
   trailFade: 0.08
   meshRefreshRate: 0.025
   materialPlayer: {fileID: 2100000, guid: a5e4a25f33bfa734ca2b52d3033c55d8, type: 2}
-  meshDestroyDelay: 0.3
+  meshDestroyDelay: 0.28
   shaderVarRef: _Alpha
   shaderVarRate: 0.08
   shaderVarRefeshRate: 0.03
