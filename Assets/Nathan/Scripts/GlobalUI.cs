@@ -8,8 +8,6 @@ using DG.Tweening;
 public class GlobalUI : MonoBehaviour
 {
     [SerializeField] PlayerController _PlayerController;
-
-    [SerializeField] Generation _Generation;
     [SerializeField] GameObject[] UIs;
 
     void Update()
@@ -35,7 +33,7 @@ public class GlobalUI : MonoBehaviour
 
     void setLevel()
     {
-        UIs[1].transform.GetChild(2).GetComponent<TMP_Text>().text = _Generation.getValueLevel().ToString();
-        UIs[1].transform.GetChild(1).GetComponent<Image>().DOFillAmount(_Generation.getValueLevel() / 10f, 0.5f);
+        UIs[1].transform.GetChild(2).GetComponent<TMP_Text>().text = Generation.Instance.getValueLevel().ToString();
+        UIs[1].transform.GetChild(1).GetComponent<Image>().DOFillAmount(Generation.Instance.getValueLevel() / 10f, 0.5f);
     }
 }

@@ -738,17 +738,48 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92037d4409f83834bba9585f7e26b471, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _generation: {fileID: 0}
   legR: {fileID: 0}
   legL: {fileID: 0}
   PosToMoveLegR: {fileID: 0}
   PosToMoveLegL: {fileID: 0}
   curve:
     serializedVersion: 2
-    m_Curve: []
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0.15815039
+      outSlope: 0.15815039
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 1
+    - serializedVersion: 3
+      time: 0.5
+      value: 1
+      inSlope: 0.014956608
+      outSlope: 0.014956608
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 1
+      outWeight: 0.45999807
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: -0.18372616
+      outSlope: -0.18372616
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.12083323
+      outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  audioClips:
+  - {fileID: 8300000, guid: 677c375969b339142afa26a8c2ca3e47, type: 3}
+  - {fileID: 8300000, guid: 77741a995cda14e47a5e5e80b03a3fcf, type: 3}
+  - {fileID: 8300000, guid: f69ef40ff5b93634fb313acddd0810fb, type: 3}
+  - {fileID: 8300000, guid: 355c4cb2a3f681543952e4e2aac8fa33, type: 3}
 --- !u!114 &2168711895991937429
 MonoBehaviour:
   m_ObjectHideFlags: 0

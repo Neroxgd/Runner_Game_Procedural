@@ -14,6 +14,12 @@ public class Generation : MonoBehaviour
     [SerializeField][Range(1, 10)] private int TimeBetweenSpawn;
     [SerializeField] private int valueLevel = 0;
     [SerializeField] private Camera cam;
+    public static Generation Instance;
+
+    void Awake()
+    {
+        Instance = this;
+    }
 
     void Start()
     {

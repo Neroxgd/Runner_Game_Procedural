@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5427058751294815938}
   - component: {fileID: 5427058751294815937}
+  - component: {fileID: 50487015536213444}
   m_Layer: 0
   m_Name: gameManager
   m_TagString: Untagged
@@ -50,5 +51,24 @@ MonoBehaviour:
   - {fileID: 4751279107462558201, guid: 90609d23f0ed13c4299bac08e390ed21, type: 3}
   spawn: {fileID: 0}
   end: {fileID: 0}
-  TimeOfTheObstacleSequence: 3
+  SpeedOfObstacle: 0
   TimeBetweenSpawn: 3
+  valueLevel: 0
+  cam: {fileID: 0}
+--- !u!114 &50487015536213444
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5427058751294815936}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9e172f60c102fe40be9bd0dd15aa4e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefabTube: {fileID: 8342267851294884223, guid: 2010e6fa3a2ba004e915d0dbb0a54334,
+    type: 3}
+  spawnTube: {fileID: 0}
+  parentInstantiate: {fileID: 0}
+  tube: {fileID: 0}
