@@ -14,16 +14,16 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float Powergravity = 9.81f;
     [SerializeField] private Transform[] posToMove;
     [SerializeField] private Transform PosMove;
-    
+
     private int indexMove = 2;
     [SerializeField] private Camera cam;
     [SerializeField] private Ease ease;
-    [SerializeField] private UnityEvent killTweenLeg; 
+    [SerializeField] private UnityEvent killTweenLeg;
     private bool isOnRotate = false;
-    public bool IsOnGround { get; set;} = false;
+    public bool IsOnGround { get; set; } = false;
     private bool isOnObstacle = false;
     private float gravity = 0;
-    
+
 
     public void Move(bool direction)
     {
@@ -133,6 +133,7 @@ public class PlayerController : MonoBehaviour
             StartCoroutine(IsOnRotate());
             if (directionGravity == 0)
             {
+                transform.position += transform.up;
                 transform.DOLocalRotate(new Vector3(0, 0, -180), _PlayerAttributs.getSpeed(), RotateMode.LocalAxisAdd).OnComplete(FixedIndexVertical);
                 cam.transform.DOLocalRotate(new Vector3(0, 0, -180), _PlayerAttributs.getSpeed(), RotateMode.LocalAxisAdd);
             }
