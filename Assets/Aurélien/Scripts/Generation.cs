@@ -31,6 +31,8 @@ public class Generation : MonoBehaviour
         if (valueLevel == 10)
         {
             indexBloc10Prefabs++;
+            if (indexBloc10Prefabs == 5)
+                indexBloc10Prefabs--;
             valueLevel = 0;
         }
     }
@@ -45,7 +47,7 @@ public class Generation : MonoBehaviour
         StartCoroutine(ObstacleDespawn(currentobstacle));
         IEnumerator ObstacleDespawn(GameObject destroyObstacle)
         {
-            yield return new WaitUntil(() => Vector3.Distance(destroyObstacle.transform.position, cam.transform.position) < 8.5f);
+            yield return new WaitUntil(() => Vector3.Distance(destroyObstacle.transform.position, cam.transform.position) < 7.5f);
             DestroyObstacles(destroyObstacle);
         }
         StartCoroutine(spawner());
