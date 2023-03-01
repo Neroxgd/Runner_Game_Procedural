@@ -6,5 +6,13 @@ using System;
 [Serializable]
 public class PrefabsGeneration
 {
-    public List<GameObject> prefabsGameObjects = new List<GameObject>();
+    public List<PrefabsComplete> prefabsGameObjects = new List<PrefabsComplete>();
+
+}
+
+[Serializable]
+public class PrefabsComplete
+{
+    public GameObject _Object;
+    public Sprite _Sprite;
 }

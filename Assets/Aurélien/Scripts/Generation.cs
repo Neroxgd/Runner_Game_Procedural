@@ -5,8 +5,8 @@ using DG.Tweening;
 
 public class Generation : MonoBehaviour
 {
-    //[SerializeField] private GameObject[] PrefabsObstacle;
     [SerializeField] List<PrefabsGeneration> prefabsIndex = new List<PrefabsGeneration>();
+    [SerializeField] List<PrefabsGeneration> currentPrefabIndex = new List<PrefabsGeneration>();
     private int index;
     [SerializeField] private Transform spawn;
     [SerializeField] private Transform end;
@@ -16,6 +16,7 @@ public class Generation : MonoBehaviour
 
     void Start()
     {
+        Shuffle();
         index = 0;
         StartCoroutine(spawner());
     }
@@ -32,7 +33,8 @@ public class Generation : MonoBehaviour
     {
         yield return new WaitForSeconds(TimeBetweenSpawn);
 
-        GameObject currentObstacle = Instantiate(prefabsIndex[index].prefabsGameObjects[Random.Range(0 , prefabsIndex[index].prefabsGameObjects.Count)] , spawn.position , Quaternion.identity);
+        //GameObject currentObstacle = Instantiate(prefabsIndex[index].prefabsGameObjects[Random.Range(0 , prefabsIndex[index].prefabsGameObjects.Count)] , spawn.position , Quaternion.identity);
+        GameObject currentObstacle = Instantiate(currentPrefabIndex[0].prefabsGameObjects[valueLevel]._Object , spawn.position , Quaternion.identity);
         valueLevel++;
         ApplyCollider(currentObstacle);
         Sequence sequenceObstacle = DOTween.Sequence();
@@ -40,6 +42,18 @@ public class Generation : MonoBehaviour
         sequenceObstacle.InsertCallback(SpeedOfObstacle * 0.5f, () => DestroyObstacles(currentObstacle)).SetSpeedBased(true);
         StartCoroutine(spawner());
     }
+
+    void Shuffle()
+    {
+        for (int i=0 ; i<currentPrefabIndex.Count ; i++)
+        {
+            for (int j=0 ; j<10 ; j++)
+            {
+               currentPrefabIndex[i].prefabsGameObjects[j] = prefabsIndex[i].prefabsGameObjects[Random.Range(0 , prefabsIndex[i].prefabsGameObjects.Count)]; 
+            }
+        }
+    }
+
 
     private void DestroyObstacles(GameObject currentobject)
     {
@@ -58,5 +72,10 @@ public class Generation : MonoBehaviour
     public int getValueLevel()
     {
         return valueLevel;
+    }
+
+    public List<PrefabsGeneration> GetCurrentPrefabsGenerations()
+    {
+        return currentPrefabIndex;
     }
 }
