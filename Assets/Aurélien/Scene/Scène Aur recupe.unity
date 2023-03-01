@@ -17,7 +17,7 @@ RenderSettings:
   m_Fog: 1
   m_FogColor: {r: 0, g: 0, b: 0, a: 1}
   m_FogMode: 3
-  m_FogDensity: 0.04
+  m_FogDensity: 0.03
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
   m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
@@ -204,7 +204,7 @@ PrefabInstance:
     - target: {fileID: 3749413769040473778, guid: 4bdff07aaa66fdb4c8efc8b6d82f9212,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 33
+      value: 59
       objectReference: {fileID: 0}
     - target: {fileID: 3749413769088749902, guid: 4bdff07aaa66fdb4c8efc8b6d82f9212,
         type: 3}
@@ -477,7 +477,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 226968875}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 2.5, z: 37}
+  m_LocalPosition: {x: 0, y: 2.5, z: 59}
   m_LocalScale: {x: 6, y: 6, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1121,55 +1121,55 @@ PrefabInstance:
         type: 3}
       propertyPath: PrefabsObstacle.Array.data[1]
       value: 
-      objectReference: {fileID: 4751279107462558201, guid: cead55a032dd40d478cab36f42a8fb2d,
+      objectReference: {fileID: 2875769615897325887, guid: 2b8a6764980e82c4fb7bd35677f6ae18,
         type: 3}
     - target: {fileID: 5427058751294815937, guid: 66a1ff40640272a4587e9208c33bbc0f,
         type: 3}
       propertyPath: PrefabsObstacle.Array.data[2]
       value: 
-      objectReference: {fileID: 4751279107462558201, guid: cead55a032dd40d478cab36f42a8fb2d,
+      objectReference: {fileID: 2875769615897325887, guid: 2b8a6764980e82c4fb7bd35677f6ae18,
         type: 3}
     - target: {fileID: 5427058751294815937, guid: 66a1ff40640272a4587e9208c33bbc0f,
         type: 3}
       propertyPath: PrefabsObstacle.Array.data[3]
       value: 
-      objectReference: {fileID: 4751279107462558201, guid: cead55a032dd40d478cab36f42a8fb2d,
+      objectReference: {fileID: 2875769615897325887, guid: 2b8a6764980e82c4fb7bd35677f6ae18,
         type: 3}
     - target: {fileID: 5427058751294815937, guid: 66a1ff40640272a4587e9208c33bbc0f,
         type: 3}
       propertyPath: PrefabsObstacle.Array.data[4]
       value: 
-      objectReference: {fileID: 4751279107462558201, guid: cead55a032dd40d478cab36f42a8fb2d,
+      objectReference: {fileID: 2875769615897325887, guid: 2b8a6764980e82c4fb7bd35677f6ae18,
         type: 3}
     - target: {fileID: 5427058751294815937, guid: 66a1ff40640272a4587e9208c33bbc0f,
         type: 3}
       propertyPath: PrefabsObstacle.Array.data[5]
       value: 
-      objectReference: {fileID: 4751279107462558201, guid: cead55a032dd40d478cab36f42a8fb2d,
+      objectReference: {fileID: 2875769615897325887, guid: 2b8a6764980e82c4fb7bd35677f6ae18,
         type: 3}
     - target: {fileID: 5427058751294815937, guid: 66a1ff40640272a4587e9208c33bbc0f,
         type: 3}
       propertyPath: PrefabsObstacle.Array.data[6]
       value: 
-      objectReference: {fileID: 4751279107462558201, guid: cead55a032dd40d478cab36f42a8fb2d,
+      objectReference: {fileID: 2875769615897325887, guid: 2b8a6764980e82c4fb7bd35677f6ae18,
         type: 3}
     - target: {fileID: 5427058751294815937, guid: 66a1ff40640272a4587e9208c33bbc0f,
         type: 3}
       propertyPath: PrefabsObstacle.Array.data[7]
       value: 
-      objectReference: {fileID: 4751279107462558201, guid: cead55a032dd40d478cab36f42a8fb2d,
+      objectReference: {fileID: 2875769615897325887, guid: 2b8a6764980e82c4fb7bd35677f6ae18,
         type: 3}
     - target: {fileID: 5427058751294815937, guid: 66a1ff40640272a4587e9208c33bbc0f,
         type: 3}
       propertyPath: PrefabsObstacle.Array.data[8]
       value: 
-      objectReference: {fileID: 4751279107462558201, guid: cead55a032dd40d478cab36f42a8fb2d,
+      objectReference: {fileID: 2875769615897325887, guid: 2b8a6764980e82c4fb7bd35677f6ae18,
         type: 3}
     - target: {fileID: 5427058751294815937, guid: 66a1ff40640272a4587e9208c33bbc0f,
         type: 3}
       propertyPath: PrefabsObstacle.Array.data[9]
       value: 
-      objectReference: {fileID: 4751279107462558201, guid: cead55a032dd40d478cab36f42a8fb2d,
+      objectReference: {fileID: 2875769615897325887, guid: 2b8a6764980e82c4fb7bd35677f6ae18,
         type: 3}
     - target: {fileID: 5427058751294815937, guid: 66a1ff40640272a4587e9208c33bbc0f,
         type: 3}

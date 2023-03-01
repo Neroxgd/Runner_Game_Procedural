@@ -45,7 +45,7 @@ public class Generation : MonoBehaviour
         StartCoroutine(ObstacleDespawn(currentobstacle));
         IEnumerator ObstacleDespawn(GameObject destroyObstacle)
         {
-            yield return new WaitUntil(() => Vector3.Distance(destroyObstacle.transform.position, cam.transform.position) < 10);
+            yield return new WaitUntil(() => Vector3.Distance(destroyObstacle.transform.position, cam.transform.position) < 8.5f);
             DestroyObstacles(destroyObstacle);
         }
         StartCoroutine(spawner());
