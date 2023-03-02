@@ -15,6 +15,7 @@ public class Generation : MonoBehaviour
     [SerializeField] private int valueLevel = 0;
     [SerializeField] private Camera cam;
     public static Generation Instance;
+    [SerializeField] private AudioClip music;
 
     void Awake()
     {
@@ -23,6 +24,7 @@ public class Generation : MonoBehaviour
 
     void Start()
     {
+        AudioManager.Instance.PlayMusic(music);
         StartCoroutine(spawner());
     }
 
@@ -40,7 +42,7 @@ public class Generation : MonoBehaviour
     {
         yield return new WaitForSeconds(TimeBetweenSpawn);
 
-        GameObject currentobstacle = Instantiate(PrefabsObstacle[Random.Range((indexBloc10Prefabs - 1) * PrefabsObstacle.Length, indexBloc10Prefabs * PrefabsObstacle.Length)], spawn.position, Quaternion.identity);
+        GameObject currentobstacle = Instantiate(PrefabsObstacle[Mathf.Clamp(Random.Range((indexBloc10Prefabs - 1) * PrefabsObstacle.Length, indexBloc10Prefabs * PrefabsObstacle.Length), 0, 50)], spawn.position, Quaternion.identity);
         valueLevel++;
         ApplyCollider(currentobstacle);
         currentobstacle.transform.DOMove(end.position, SpeedOfObstacle, false).SetEase(Ease.InSine).SetSpeedBased(true);

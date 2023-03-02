@@ -14,6 +14,7 @@ public class LazerShoot : MonoBehaviour
     [SerializeField] private AnimationCurve shakeLazerY;
     [SerializeField] private Image loadShoot;
     [SerializeField] private Sprite pointerRed, pointerGreen;
+    [SerializeField] private AudioClip audioClip;
     private bool canShoot;
 
     private List<Transform> listLazer;
@@ -35,7 +36,7 @@ public class LazerShoot : MonoBehaviour
 
     private void LoadShoot()
     {
-        loadShoot.DOFillAmount(1, 30).OnComplete(() => { canShoot = true; loadShoot.sprite = pointerGreen; });
+        loadShoot.DOFillAmount(1, 30).OnComplete(() => { canShoot = true; loadShoot.sprite = pointerGreen; AudioManager.Instance.PlaySound(audioClip); });
     }
 
     void Start()

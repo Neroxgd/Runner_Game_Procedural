@@ -678,6 +678,7 @@ MonoBehaviour:
       m_Bits: 8
     takingWall: 0
     invoke: 0
+  globalUI: {fileID: 0}
   rbPlayer: {fileID: 3135672723394088106}
   fixDown: {fileID: 0}
   fixLeft: {fileID: 0}
@@ -1180,6 +1181,7 @@ MonoBehaviour:
   loadShoot: {fileID: 0}
   pointerRed: {fileID: 21300000, guid: 482c18a18be6db44b906d6abc794aeb4, type: 3}
   pointerGreen: {fileID: 21300000, guid: 3646c1441407ca34abd1c8cf65fa395a, type: 3}
+  audioClip: {fileID: 8300000, guid: a5929f229ef2e8442bd5125abe37cbfc, type: 3}
 --- !u!114 &5535347997382464651
 MonoBehaviour:
   m_ObjectHideFlags: 0
