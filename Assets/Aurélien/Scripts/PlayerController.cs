@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
 {
     [SerializeField] PlayerAttributs _PlayerAttributs = new PlayerAttributs();
     [SerializeField] InteractionWall _InteractionWall = new InteractionWall();
+    [SerializeField] GlobalUI globalUI;
     [SerializeField] private Rigidbody rbPlayer;
     [SerializeField] private Transform fixDown, fixLeft, fixUp, fixRight;
     [SerializeField] private Transform fixedposdown, fixedposleft, fixedposup, fixedposright;
@@ -215,7 +216,12 @@ public class PlayerController : MonoBehaviour
 
     void LoseHPPlayer()
     {
+        transform.position = new Vector3(0, 3, transform.position.z);
+        transform.eulerAngles = Vector3.zero;
+        indexMove = 2;
+        cam.transform.eulerAngles = Vector3.zero;
         _InteractionWall.setTakingWall(true);
+        globalUI.sethp(_PlayerAttributs.getHP());
         _PlayerAttributs.LoseHP();
         _InteractionWall.invoke = false;
         StartCoroutine(invicibility());

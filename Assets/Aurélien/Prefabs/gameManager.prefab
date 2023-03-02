@@ -86,7 +86,7 @@ MonoBehaviour:
   - {fileID: 4751279107462558201, guid: 7a005d0015c6d0a40b3a91fec44833f6, type: 3}
   - {fileID: 4751279107462558201, guid: e28a4ce2e2f2c2e4f93774220cbdcd9b, type: 3}
   - {fileID: 4751279107462558201, guid: 4ffed80f6536b0845993177326e78d9a, type: 3}
-  - {fileID: 4751279107462558201, guid: 06a047c7b0fedc241ae10e3e07ebef54, type: 3}
+  - {fileID: 4751279107462558201, guid: c3276f09c7c27a1428cb167aad969ee6, type: 3}
   - {fileID: 4751279107462558201, guid: 8a1b733cdf78e214bbf09d281448d424, type: 3}
   - {fileID: 4751279107462558201, guid: bccf2960b995e094e96a0432a383095f, type: 3}
   - {fileID: 4751279107462558201, guid: f7d8a513cb013534886f9b5114e50db6, type: 3}
@@ -102,6 +102,7 @@ MonoBehaviour:
   TimeBetweenSpawn: 5
   valueLevel: 0
   cam: {fileID: 0}
+  music: {fileID: 8300000, guid: e80c0458042778c40a74e57c70fafcde, type: 3}
 --- !u!114 &50487015536213444
 MonoBehaviour:
   m_ObjectHideFlags: 0

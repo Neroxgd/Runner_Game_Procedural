@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using UnityEngine.Events;
 
 [System.Serializable]
 public class InteractionWall
@@ -11,7 +12,7 @@ public class InteractionWall
     [SerializeField] bool takingWall;
     public bool invoke;
 
-    //public static event Action wallhit;
+    // [SerializeField] private UnityEvent wallhit;
 
     public void CheckRayCastWall(Vector3 positionValue)
     {
@@ -19,7 +20,7 @@ public class InteractionWall
 
         if (Physics.Raycast(positionValue,Vector3.forward , out hit , distance , _mask) && !takingWall)
         {
-            //wallhit?.Invoke();
+            // wallhit.Invoke();
             invoke = true;
         }
     }
