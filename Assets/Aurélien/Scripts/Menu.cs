@@ -9,6 +9,7 @@ public class Menu : MonoBehaviour
     [SerializeField] GameObject robot;
     [SerializeField] RectTransform playbutton;
     [SerializeField] AnimationCurve curve;
+    [SerializeField] private AudioClip audioClip;
 
     public void Play()
     {
@@ -38,6 +39,7 @@ public class Menu : MonoBehaviour
     void Start()
     {
         StartCoroutine(StartBeats());
+        AudioManager.Instance.PlayMusic(audioClip);
     }
 
     public void Quit()

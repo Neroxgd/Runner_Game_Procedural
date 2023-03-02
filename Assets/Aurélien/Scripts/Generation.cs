@@ -42,7 +42,7 @@ public class Generation : MonoBehaviour
     {
         yield return new WaitForSeconds(TimeBetweenSpawn);
 
-        GameObject currentobstacle = Instantiate(PrefabsObstacle[Mathf.Clamp(Random.Range((indexBloc10Prefabs - 1) * PrefabsObstacle.Length, indexBloc10Prefabs * PrefabsObstacle.Length), 0, 50)], spawn.position, Quaternion.identity);
+        GameObject currentobstacle = Instantiate(PrefabsObstacle[Mathf.Clamp(Random.Range((indexBloc10Prefabs - 1) * PrefabsObstacle.Length, indexBloc10Prefabs * PrefabsObstacle.Length), 0, 60)], spawn.position, Quaternion.identity);
         valueLevel++;
         ApplyCollider(currentobstacle);
         currentobstacle.transform.DOMove(end.position, SpeedOfObstacle, false).SetEase(Ease.InSine).SetSpeedBased(true);
