@@ -6,7 +6,7 @@ using DG.Tweening;
 public class Generation : MonoBehaviour
 {
     [SerializeField] private GameObject[] PrefabsObstacle;
-    private int indexBloc10Prefabs = 1;
+    private int indexBloc10Prefabs = 0;
     [SerializeField] private Transform spawn;
     [SerializeField] private Transform end;
     [SerializeField][Range(1, 10)] private float SpeedOfObstacle;
@@ -32,17 +32,17 @@ public class Generation : MonoBehaviour
     {
         if (valueLevel == 10)
         {
-            indexBloc10Prefabs++;
-            if (indexBloc10Prefabs == 5)
-                indexBloc10Prefabs--;
             valueLevel = 0;
+            if (indexBloc10Prefabs + 10 > PrefabsObstacle.Length) return;
+            indexBloc10Prefabs += 10;
         }
     }
+
     IEnumerator spawner()
     {
         yield return new WaitForSeconds(TimeBetweenSpawn);
 
-        GameObject currentobstacle = Instantiate(PrefabsObstacle[Mathf.Clamp(Random.Range((indexBloc10Prefabs - 1) * PrefabsObstacle.Length, indexBloc10Prefabs * PrefabsObstacle.Length), 0, 60)], spawn.position, Quaternion.identity);
+        GameObject currentobstacle = Instantiate(PrefabsObstacle[Random.Range(indexBloc10Prefabs, indexBloc10Prefabs + 10)], spawn.position, Quaternion.identity);
         valueLevel++;
         ApplyCollider(currentobstacle);
         currentobstacle.transform.DOMove(end.position, SpeedOfObstacle, false).SetEase(Ease.InSine).SetSpeedBased(true);

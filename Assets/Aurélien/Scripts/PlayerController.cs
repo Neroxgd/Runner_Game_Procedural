@@ -126,7 +126,7 @@ public class PlayerController : MonoBehaviour
 
     public void ChangeGravity(int directionGravity)
     {
-        if (IsOnGround && !DOTween.IsTweening(rbPlayer))
+        if (IsOnGround && !DOTween.IsTweening(rbPlayer) && !DOTween.IsTweening(cam.transform))
         {
             int currentEulerAngle = (int)transform.eulerAngles.z;
             IsOnGround = false;
