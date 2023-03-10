@@ -20,6 +20,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Camera cam;
     [SerializeField] private Ease ease;
     [SerializeField] private UnityEvent killTweenLeg;
+    [SerializeField] private AudioClip hitSound;
     private bool isOnRotate = false;
     public bool IsOnGround { get; set; } = false;
     private bool isOnObstacle = false;
@@ -220,6 +221,7 @@ public class PlayerController : MonoBehaviour
         transform.eulerAngles = Vector3.zero;
         indexMove = 2;
         cam.transform.eulerAngles = Vector3.zero;
+        AudioManager.Instance.PlaySound(hitSound);
         _InteractionWall.setTakingWall(true);
         globalUI.sethp(_PlayerAttributs.getHP());
         _PlayerAttributs.LoseHP();

@@ -4470,11 +4470,6 @@ PrefabInstance:
       objectReference: {fileID: 1186284839}
     - target: {fileID: 3135672723394088148, guid: 105ea18ddeecb0b40baef93303a70ab7,
         type: 3}
-      propertyPath: _PlayerAttributs.speed
-      value: 0.25
-      objectReference: {fileID: 0}
-    - target: {fileID: 3135672723394088148, guid: 105ea18ddeecb0b40baef93303a70ab7,
-        type: 3}
       propertyPath: posToMove.Array.data[0]
       value: 
       objectReference: {fileID: 1798386072}
@@ -4700,6 +4695,7 @@ MonoBehaviour:
   killTweenLeg:
     m_PersistentCalls:
       m_Calls: []
+  hitSound: {fileID: 0}
 --- !u!114 &7901154625385358253
 MonoBehaviour:
   m_ObjectHideFlags: 0
