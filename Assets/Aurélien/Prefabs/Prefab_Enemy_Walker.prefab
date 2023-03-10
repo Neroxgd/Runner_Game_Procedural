@@ -670,7 +670,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _PlayerAttributs:
     hp: 0
-    speed: 10
+    speed: 0.25
   _InteractionWall:
     distance: 0
     _mask:
@@ -713,6 +713,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  hitSound: {fileID: 8300000, guid: e57a6fc7323f41f4a97e0615fe605fdc, type: 3}
 --- !u!114 &3135672723394088149
 MonoBehaviour:
   m_ObjectHideFlags: 0

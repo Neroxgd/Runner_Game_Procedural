@@ -9,7 +9,7 @@ public class Generation : MonoBehaviour
     private int indexBloc10Prefabs = 0;
     [SerializeField] private Transform spawn;
     [SerializeField] private Transform end;
-    [SerializeField][Range(1, 10)] private float SpeedOfObstacle;
+    [SerializeField][Range(1, 20)] private float SpeedOfObstacle;
     public float getSpeedOfObstacle { get { return SpeedOfObstacle; } }
     [SerializeField][Range(1, 10)] private int TimeBetweenSpawn;
     [SerializeField] private int valueLevel = 0;
@@ -32,6 +32,7 @@ public class Generation : MonoBehaviour
     {
         if (valueLevel == 10)
         {
+            SpeedOfObstacle += 1;
             valueLevel = 0;
             if (indexBloc10Prefabs + 10 > PrefabsObstacle.Length) return;
             indexBloc10Prefabs += 10;
