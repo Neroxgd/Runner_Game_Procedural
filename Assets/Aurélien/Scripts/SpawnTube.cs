@@ -1,19 +1,16 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class SpawnTube : MonoBehaviour
 {
-    [SerializeField] private GameObject prefabTube;
-    [SerializeField] private Transform spawnTube, parentInstantiate;
-    [SerializeField] private Tube tube;
+    [SerializeField] private Transform currentTube, pointWhenInstatiate, pointToInstantiate;
+    [SerializeField] private GameObject tube;
 
     void Update()
     {
-        if (tube.transform.position.z <= 31)
+        if (currentTube.position.z < pointWhenInstatiate.position.z)
         {
-            GameObject objTube = Instantiate(prefabTube, spawnTube.position, Quaternion.identity, parentInstantiate);
-            tube = objTube.AddComponent<Tube>();
-        }       
+            currentTube = Instantiate(tube, pointToInstantiate.position, Quaternion.identity, transform.parent).transform;
+            currentTube.gameObject.AddComponent<Tube>();
+        }
     }
 }

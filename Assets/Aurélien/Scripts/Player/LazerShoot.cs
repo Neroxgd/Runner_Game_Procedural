@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 using UnityEngine.UI;
+using UnityEngine.InputSystem;
 
 public class LazerShoot : MonoBehaviour
 {

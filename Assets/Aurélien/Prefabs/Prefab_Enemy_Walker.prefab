@@ -672,11 +672,12 @@ MonoBehaviour:
     hp: 0
     speed: 0.25
   _InteractionWall:
-    distance: 0
+    distance: 0.05
     _mask:
       serializedVersion: 2
       m_Bits: 8
     takingWall: 0
+    _generation: {fileID: 0}
     invoke: 0
   globalUI: {fileID: 0}
   rbPlayer: {fileID: 3135672723394088106}

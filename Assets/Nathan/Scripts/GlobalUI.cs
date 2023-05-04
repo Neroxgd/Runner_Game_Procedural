@@ -18,12 +18,8 @@ public class GlobalUI : MonoBehaviour
     void Start()
     {
         speedOfObstacleAtStart = _generation.getSpeedOfObstacle;
-        print(_PlayerController._PlayerAttributs.getHP());
-        for (int i = 0; i < _PlayerController._PlayerAttributs.getHP(); i++)
-        {
+        for (int i = 0; i < _PlayerController.GetPlayerAttributs().getHP(); i++)
             Instantiate(prefabHeart, Vector3.zero, Quaternion.identity, UIs[0].transform);
-            print("jza");
-        }
             
     }
 

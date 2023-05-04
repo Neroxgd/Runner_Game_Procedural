@@ -6,7 +6,7 @@ using System;
 
 public class PlayerController : MonoBehaviour
 {
-    public PlayerAttributs _PlayerAttributs = new PlayerAttributs();
+    [SerializeField] PlayerAttributs _PlayerAttributs = new PlayerAttributs();
     [SerializeField] InteractionWall _InteractionWall = new InteractionWall();
     [SerializeField] GlobalUI globalUI;
     [SerializeField] private Rigidbody rbPlayer;
@@ -172,9 +172,10 @@ public class PlayerController : MonoBehaviour
 
     void Awake()
     {
-        _PlayerAttributs.setHP(100);
+        _PlayerAttributs.setHP(10);
         _PlayerAttributs.setSpeed(0.1f);
-        _InteractionWall.setDistance(1f);
+        _InteractionWall.setDistance(0.05f);
+
         //InteractionWall.wallhit += LoseHPPlayer;
     }
 

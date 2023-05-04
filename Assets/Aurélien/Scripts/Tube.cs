@@ -8,7 +8,7 @@ public class Tube : MonoBehaviour
     {
         if (Generation.Instance == null) return;
         transform.Translate(-transform.forward * Generation.Instance.getSpeedOfObstacle * Time.deltaTime);
-        if (transform.position.z < -60)
+        if (transform.position.z < -100)
             Destroy(gameObject);
     }
 }

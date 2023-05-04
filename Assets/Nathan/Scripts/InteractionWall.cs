@@ -10,6 +10,7 @@ public class InteractionWall
     [SerializeField] float distance;
     [SerializeField] LayerMask _mask;
     [SerializeField] bool takingWall;
+    [SerializeField] private Generation _generation;
     public bool invoke;
 
     // [SerializeField] private UnityEvent wallhit;
@@ -17,13 +18,13 @@ public class InteractionWall
     public void CheckRayCastWall(Vector3 positionValue)
     {
         RaycastHit hit;
-
-        if (Physics.Raycast(positionValue,Vector3.forward , out hit , distance , _mask) && !takingWall)
+        if (Physics.Raycast(positionValue, Vector3.forward, out hit, distance  * _generation.getSpeedOfObstacle, _mask) && !takingWall)
         {
             // wallhit.Invoke();
             invoke = true;
         }
     }
+
     public void setDistance(float value)
     {
         distance = value;

@@ -99,8 +99,7 @@ MonoBehaviour:
   spawn: {fileID: 0}
   end: {fileID: 0}
   speedOfObstacle: 5
-  TimeBetweenSpawn: 5
-  valueLevel: 0
+  timeBetweenSpawn: 10
   cam: {fileID: 0}
   music: {fileID: 8300000, guid: e2a3ea411640d284cbcd4b3b843f11c3, type: 3}
 --- !u!114 &50487015536213444
@@ -115,8 +114,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9e172f60c102fe40be9bd0dd15aa4e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefabTube: {fileID: 8342267851294884223, guid: 2010e6fa3a2ba004e915d0dbb0a54334,
-    type: 3}
-  spawnTube: {fileID: 0}
-  parentInstantiate: {fileID: 0}
-  tube: {fileID: 0}
+  currentTube: {fileID: 0}
+  pointWhenInstatiate: {fileID: 0}
+  pointToInstantiate: {fileID: 0}
+  tube: {fileID: 8342267851294884223, guid: 2010e6fa3a2ba004e915d0dbb0a54334, type: 3}
