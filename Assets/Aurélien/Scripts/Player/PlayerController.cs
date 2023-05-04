@@ -6,7 +6,7 @@ using System;
 
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField] PlayerAttributs _PlayerAttributs = new PlayerAttributs();
+    public PlayerAttributs _PlayerAttributs = new PlayerAttributs();
     [SerializeField] InteractionWall _InteractionWall = new InteractionWall();
     [SerializeField] GlobalUI globalUI;
     [SerializeField] private Rigidbody rbPlayer;
@@ -170,9 +170,9 @@ public class PlayerController : MonoBehaviour
             FixedPosMove();
     }
 
-    void Start()
+    void Awake()
     {
-        _PlayerAttributs.setHP(3);
+        _PlayerAttributs.setHP(100);
         _PlayerAttributs.setSpeed(0.1f);
         _InteractionWall.setDistance(1f);
         //InteractionWall.wallhit += LoseHPPlayer;
@@ -184,7 +184,7 @@ public class PlayerController : MonoBehaviour
         gravity += Powergravity;
         rbPlayer.velocity += -transform.up * gravity;
         RaycastHit hit;
-        if (Physics.Raycast(ray, out hit, 0.8f))
+        if (Physics.Raycast(ray, out hit, 0.75f))
         {
             if (hit.transform.CompareTag("Wall"))
                 isOnObstacle = true;
@@ -198,7 +198,7 @@ public class PlayerController : MonoBehaviour
         }
         else
             IsOnGround = false;
-        Debug.DrawRay(ray.origin, -transform.up * 0.8f, Color.green);
+        Debug.DrawRay(ray.origin, -transform.up * 0.75f, Color.green);
     }
 
     IEnumerator IsOnRotate()

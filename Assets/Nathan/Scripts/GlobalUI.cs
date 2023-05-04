@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
@@ -10,8 +8,24 @@ using UnityEngine.InputSystem;
 public class GlobalUI : MonoBehaviour
 {
     [SerializeField] PlayerController _PlayerController;
+    [SerializeField] Generation _generation;
     [SerializeField] GameObject[] UIs;
-    [SerializeField] GameObject popUp;
+    [SerializeField] GameObject popUp, prefabHeart;
+    [SerializeField] TextMeshProUGUI UIdistance;
+    private float distance;
+    private float speedOfObstacleAtStart;
+
+    void Start()
+    {
+        speedOfObstacleAtStart = _generation.getSpeedOfObstacle;
+        print(_PlayerController._PlayerAttributs.getHP());
+        for (int i = 0; i < _PlayerController._PlayerAttributs.getHP(); i++)
+        {
+            Instantiate(prefabHeart, Vector3.zero, Quaternion.identity, UIs[0].transform);
+            print("jza");
+        }
+            
+    }
 
     void Update()
     {
@@ -19,8 +33,10 @@ public class GlobalUI : MonoBehaviour
         setLevel();
         if (Keyboard.current.escapeKey.isPressed)
             popUp.SetActive(true);
-        else 
+        else
             popUp.SetActive(false);
+        distance += _generation.getSpeedOfObstacle / speedOfObstacleAtStart * Time.deltaTime;
+        UIdistance.text = $"{(int)distance}m";
     }
 
     public void sethp(int hp)

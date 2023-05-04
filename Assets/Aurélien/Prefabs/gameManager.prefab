@@ -98,7 +98,7 @@ MonoBehaviour:
   - {fileID: 4751279107462558201, guid: e296c926c7367ab4c8a7804d9c3f9cb7, type: 3}
   spawn: {fileID: 0}
   end: {fileID: 0}
-  SpeedOfObstacle: 6
+  speedOfObstacle: 5
   TimeBetweenSpawn: 5
   valueLevel: 0
   cam: {fileID: 0}

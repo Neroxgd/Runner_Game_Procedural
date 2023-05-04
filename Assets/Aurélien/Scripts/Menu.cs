@@ -21,6 +21,7 @@ public class Menu : MonoBehaviour
         robot.SetActive(false);
         yield return new WaitForSeconds(1);
         SceneManager.LoadScene("Scène Aur recupe");
+        // SceneManager.LoadScene("Menu");
     }
 
     IEnumerator StartBeats()

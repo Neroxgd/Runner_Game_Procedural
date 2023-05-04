@@ -21,6 +21,7 @@ public class LazerShoot : MonoBehaviour
     public void ShootLazer()
     {
         if (!canShoot) return;
+        canShoot = false;
         loadShoot.fillAmount = 0;
         loadShoot.sprite = pointerRed;
         LoadShoot();
