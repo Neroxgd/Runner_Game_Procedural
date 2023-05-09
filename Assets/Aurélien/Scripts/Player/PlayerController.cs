@@ -172,7 +172,7 @@ public class PlayerController : MonoBehaviour
 
     void Awake()
     {
-        _PlayerAttributs.setHP(10);
+        _PlayerAttributs.setHP(1);
         _PlayerAttributs.setSpeed(0.1f);
         _InteractionWall.setDistance(0.05f);
 
@@ -232,7 +232,7 @@ public class PlayerController : MonoBehaviour
 
     IEnumerator invicibility()
     {
-        yield return new WaitForSeconds(0.3f);
+        yield return new WaitForSeconds(1f);
         _InteractionWall.setTakingWall(false);
     }
 

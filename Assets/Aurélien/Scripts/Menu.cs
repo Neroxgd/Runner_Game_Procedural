@@ -1,7 +1,7 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
+using TMPro;
 using UnityEngine.SceneManagement;
 
 public class Menu : MonoBehaviour
@@ -10,6 +10,10 @@ public class Menu : MonoBehaviour
     [SerializeField] RectTransform playbutton;
     [SerializeField] AnimationCurve curve;
     [SerializeField] private AudioClip audioClip;
+    [SerializeField] private GameObject leaderBoard;
+    [SerializeField] private GameObject mainMenu;
+    [SerializeField] private TMP_InputField inputFieldPseudo;
+    public static string pseudo;
 
     public void Play()
     {
@@ -32,7 +36,6 @@ public class Menu : MonoBehaviour
         {
             playbutton.DOSizeDelta(new Vector2(playbutton.rect.width * 1.5f, playbutton.rect.height * 1.5f), 0.2f).SetEase(curve);
             yield return new WaitForSeconds(0.8f);
-            print("hezz");
             StartCoroutine(Beats());
         }
     }
@@ -40,11 +43,24 @@ public class Menu : MonoBehaviour
     void Start()
     {
         StartCoroutine(StartBeats());
+        inputFieldPseudo.text = pseudo;
         AudioManager.Instance.PlayMusic(audioClip);
     }
 
     public void Quit()
     {
         Application.Quit();
+    }
+
+    public void LeaderBoard()
+    {
+        leaderBoard.SetActive(!leaderBoard.activeInHierarchy);
+        mainMenu.SetActive(!mainMenu.activeInHierarchy);
+    }
+
+    public void SetPseudo()
+    {
+        if (inputFieldPseudo.text != null)
+            pseudo = inputFieldPseudo.text;
     }
 }

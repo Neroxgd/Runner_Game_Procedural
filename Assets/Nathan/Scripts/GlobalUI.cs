@@ -20,7 +20,7 @@ public class GlobalUI : MonoBehaviour
         speedOfObstacleAtStart = _generation.getSpeedOfObstacle;
         for (int i = 0; i < _PlayerController.GetPlayerAttributs().getHP(); i++)
             Instantiate(prefabHeart, Vector3.zero, Quaternion.identity, UIs[0].transform);
-            
+
     }
 
     void Update()
@@ -39,6 +39,7 @@ public class GlobalUI : MonoBehaviour
     {
         if (hp <= 0)
         {
+            LeaderBoard.SetNewScore((int)distance, Menu.pseudo);
             SceneManager.LoadScene("Scène Aur recupe");
             return;
         }
@@ -64,7 +65,7 @@ public class GlobalUI : MonoBehaviour
         UIs[1].transform.GetChild(1).GetComponent<Image>().DOFillAmount(Generation.Instance.getValueLevel() / 10f, 0.5f);
     }
 
-    public void Menu()
+    public void MenuLoad()
     {
         SceneManager.LoadScene("Menu");
     }
