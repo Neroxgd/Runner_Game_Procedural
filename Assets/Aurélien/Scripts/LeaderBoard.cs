@@ -4,7 +4,6 @@ using UnityEngine;
 public class LeaderBoard : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI[] scores;
-    [SerializeField] private GameObject scoreText;
 
     void Start()
     {
@@ -21,10 +20,10 @@ public class LeaderBoard : MonoBehaviour
         for (int i = 0; i < 10; i++)
             if (newScore > PlayerPrefs.GetInt("score" + i, 0))
             {
-                for (int j = i; j < 10; j++)
+                for (int j = 10; j > i; j--)
                 {
-                    PlayerPrefs.SetInt("score" + j + 1, PlayerPrefs.GetInt("score" + j));
-                    PlayerPrefs.SetString("pseudo" + j + 1, PlayerPrefs.GetString("pseudo" + j));
+                    PlayerPrefs.SetInt("score" + j, PlayerPrefs.GetInt("score" + (j - 1)));
+                    PlayerPrefs.SetString("pseudo" + j, PlayerPrefs.GetString("pseudo" + (j - 1)));
                 }
                 PlayerPrefs.SetInt("score" + i, newScore);
                 PlayerPrefs.SetString("pseudo" + i, pseudo == null ? "unknown" : pseudo);

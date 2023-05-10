@@ -6,9 +6,9 @@ using UnityEngine.SceneManagement;
 
 public class Menu : MonoBehaviour
 {
-    [SerializeField] GameObject robot;
-    [SerializeField] RectTransform playbutton;
-    [SerializeField] AnimationCurve curve;
+    [SerializeField] private GameObject robot;
+    [SerializeField] private RectTransform playbutton;
+    [SerializeField] private AnimationCurve curve;
     [SerializeField] private AudioClip audioClip;
     [SerializeField] private GameObject leaderBoard;
     [SerializeField] private GameObject mainMenu;
@@ -21,7 +21,7 @@ public class Menu : MonoBehaviour
     }
     IEnumerator StartGame()
     {
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(0.5f);
         robot.SetActive(false);
         yield return new WaitForSeconds(1);
         SceneManager.LoadScene("Scène Aur recupe");

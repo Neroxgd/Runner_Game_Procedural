@@ -52,7 +52,6 @@ public class Generation : MonoBehaviour
     {
         speedOfObstacle += Time.deltaTime;
         timeBetweenSpawn = Mathf.Lerp(timeBetweenSpawn, 1, 0.0005f);
-        print(timeBetweenSpawn);
         foreach (Transform obstacle in listCurrentObstacleMoving)
             obstacle.Translate(-transform.forward * speedOfObstacle * Time.deltaTime);
     }

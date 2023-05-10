@@ -135,18 +135,20 @@ public class PlayerController : MonoBehaviour
             StartCoroutine(IsOnRotate());
             if (directionGravity == 0)
             {
-                transform.position += transform.up;
+                transform.Translate(transform.up, Space.World);
                 transform.DOLocalRotate(new Vector3(0, 0, -180), _PlayerAttributs.getSpeed(), RotateMode.LocalAxisAdd).OnComplete(FixedIndexVertical);
                 cam.transform.DOLocalRotate(new Vector3(0, 0, -180), _PlayerAttributs.getSpeed(), RotateMode.LocalAxisAdd);
             }
 
             else if (directionGravity == -1)
             {
+                transform.Translate(-transform.right, Space.World);
                 transform.DOLocalRotate(new Vector3(0, 0, -90), _PlayerAttributs.getSpeed(), RotateMode.LocalAxisAdd).OnComplete(() => FixedIndexHorizontal(currentEulerAngle));
                 cam.transform.DOLocalRotate(new Vector3(0, 0, -90), _PlayerAttributs.getSpeed(), RotateMode.LocalAxisAdd);
             }
             else if (directionGravity == 1)
             {
+                transform.Translate(transform.right, Space.World);
                 transform.DOLocalRotate(new Vector3(0, 0, 90), _PlayerAttributs.getSpeed(), RotateMode.LocalAxisAdd).OnComplete(() => FixedIndexHorizontal(currentEulerAngle));
                 cam.transform.DOLocalRotate(new Vector3(0, 0, 90), _PlayerAttributs.getSpeed(), RotateMode.LocalAxisAdd);
             }
@@ -172,7 +174,7 @@ public class PlayerController : MonoBehaviour
 
     void Awake()
     {
-        _PlayerAttributs.setHP(1);
+        _PlayerAttributs.setHP(10);
         _PlayerAttributs.setSpeed(0.1f);
         _InteractionWall.setDistance(0.05f);
 
