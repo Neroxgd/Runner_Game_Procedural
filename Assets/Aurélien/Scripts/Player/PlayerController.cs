@@ -220,6 +220,8 @@ public class PlayerController : MonoBehaviour
 
     void LoseHPPlayer()
     {
+        DOTween.Kill(transform);
+        IsOnGround = false;
         transform.position = new Vector3(0, 3, transform.position.z);
         transform.eulerAngles = Vector3.zero;
         indexMove = 2;
