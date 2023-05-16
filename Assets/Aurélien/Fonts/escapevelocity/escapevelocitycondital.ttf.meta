@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: b65b60eb8683b09408bc970429ac8088
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Escape Velocity Condensed Ital
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: d12383d8c18cdc64a831f4de2eb892ab, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

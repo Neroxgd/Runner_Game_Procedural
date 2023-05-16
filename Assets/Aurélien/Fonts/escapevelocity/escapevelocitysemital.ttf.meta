@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: b9396d04e75806d48b187393a07a035d
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Escape Velocity Semi-Italic
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 32b558bebca49c34abbeacbc1f976816, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

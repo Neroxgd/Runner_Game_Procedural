@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: 4e26965ba22c5f949bb9331b06b34b63
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Escape Velocity Halftone
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: d9fbc90bf11179e47a6cb61fe19da308, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

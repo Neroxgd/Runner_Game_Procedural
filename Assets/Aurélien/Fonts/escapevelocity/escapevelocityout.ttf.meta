@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: bb4d9177166b228419f285a8f454c861
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Escape Velocity Outline
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 888e63fa951b301489e8c9b03e9301f0, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

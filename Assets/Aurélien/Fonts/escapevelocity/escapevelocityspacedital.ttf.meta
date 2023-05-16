@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: 4560059b1c7ee86478d9c4dc3ed39bb5
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Escape Velocity Spaced Italic
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 92220baa9ccbdf848b3e39016004d615, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
